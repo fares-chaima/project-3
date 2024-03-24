@@ -9,6 +9,7 @@ const SignIn = () => {
     const [pwd, setPwd] = useState('');
     const [isRevealPwd, setIsRevealPwd] = useState(false);
     return ( 
+      
         <div className="form">
             <form >
              <span>LOGIN</span>
