@@ -92,4 +92,28 @@ p{
   border-right: 6px solid #01C7BE;
   border-bottom: 6px solid #01C7BE;
   } 
- 
+ a{
+  text-decoration:none ;
+ padding: 35px;
+color: #000000;
+font-size: 27px;
+font-weight: 700;
+line-height: 30.57px;
+
+ }
+ a:hover{
+  text-decoration: underline 5px solid #01C7BE ;
+  cursor: pointer;
+ }
+ .miNnav{
+  width: 677px;
+height: 110px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+border-radius: 180px ;
+border: 1px 0px 0px 0px;
+background-color: #DCC6C6;
+margin-top: -60px;
+margin-left: 26%;
+ }

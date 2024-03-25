@@ -1,31 +1,22 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import './css/SignIn.css';
-import emailIcon from './images/email.svg';
+import ConfPwd from './images/ConfPwd.svg';
 import hidePwdImg from './images/hide-password.svg';
 import pwdIcon from './images/pwdsvg.svg';
 import showPwdImg from './images/show-password.svg';
-
-const SignIn = () => {
+const NewPwd = () => {
     const [pwd, setPwd] = useState('');
     const [isRevealPwd, setIsRevealPwd] = useState(false);
     return ( 
-      
         <div className="form">
             <form >
-             <span>Se connecter</span>
+            <span>mot de passe <br /> oubli <span className="err">é</span> </span>
 
-             <div className="email">
-                <img src={emailIcon} alt="" />
-                <input type="email" name="email" id="email" placeholder='email' />
-
-             </div>
-
-             <div className="pwd">
+            <div className="pwd" style={{marginTop: "4px"}}>
                 <img src={pwdIcon} alt="" />
                 <input
                 name="pwd"
-                placeholder="mot de passe"
+                placeholder="nouveau mot de passe"
                 type={isRevealPwd ? "text" : "password"}
                 value={pwd}
                 onChange={e => setPwd(e.target.value)}
@@ -38,11 +29,26 @@ const SignIn = () => {
 
 
              </div>
-             <Link to="/PwdOublieForm">j’ai oublié le mot de passe</Link>
+             <div className="pwd" style={{marginTop: "4px"}}>
+                <img src={ConfPwd} alt="" />
+                <input
+                name="pwd"
+                placeholder="confirmer le mot de passe"
+                type="password"
+                
+               
+                />
+              
+
+
+             </div>
+
+            
+             
              <button>confirmer</button>
             </form>
         </div>
      );
 }
  
-export default SignIn;
+export default NewPwd;

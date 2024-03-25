@@ -3,7 +3,10 @@ import './App.css';
 
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
+import CodeConf from './CodeConf';
 import NavBar from './NavBar';
+import NewPwd from './NewPwd';
+import PwdOublieForm from './PwdOublieForm';
 import SignIn from './SignIn';
 function App() {
   return (
@@ -19,6 +22,17 @@ function App() {
 
       <Route  path="/SignIn">
       <SignIn />
+      </Route>
+      <Route path="/PwdOublieForm">
+        <PwdOublieForm />
+      </Route>
+
+      <Route path="/CodeConf">
+        <CodeConf  />
+      </Route>
+
+      <Route path="/NewPwd">
+        <NewPwd  />
       </Route>
       </Switch>
       </div>

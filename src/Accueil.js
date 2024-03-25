@@ -12,7 +12,11 @@ const Accueil = () => {
           </div>
         </div>     
         </div>
-        <button>hello</button>
+        <div className="miNnav">
+          <a href="#" style={{textDecoration: "underline 5px solid #01C7BE"}}>nos services</a>
+          <a href="#">Télécharger App</a>
+
+        </div>
         </>     
       );
 }
