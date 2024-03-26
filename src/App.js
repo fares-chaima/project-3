@@ -1,10 +1,12 @@
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import MinNavBar from "./MinNavBar";
 
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
+import Admin from './Admin';
+import AfficherComptes from './AfficherComptes';
 import CodeConf from './CodeConf';
-import NavBar from './NavBar';
 import NewPwd from './NewPwd';
 import PwdOublieForm from './PwdOublieForm';
 import SignIn from './SignIn';
@@ -13,7 +15,7 @@ function App() {
     <Router>
       
     <div className="App">
-      <NavBar />
+     
       <div className="content">
         <Switch>
         <Route exact path="/">
@@ -34,6 +36,13 @@ function App() {
       <Route path="/NewPwd">
         <NewPwd  />
       </Route>
+      <Route path="/Admin">
+        <Admin />
+      </Route>
+      <Route path="/AfficherComptes">
+      <MinNavBar/>
+                   <AfficherComptes />
+                </Route>
       </Switch>
       </div>
     </div>
