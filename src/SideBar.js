@@ -12,63 +12,65 @@ import inn from "./images/in.svg";
 import profile from "./images/profile.svg";
 const SideBar = () => {
     const { collapseSidebar     } = useProSidebar();
-  const [col, setCOL] = useState(false);
+    
+  const [col, setCol] = useState(false);
   const [did, setDis] = useState("");
-  const toggle =(col) => {
+ 
+ 
   
-  }
     return ( 
    
         
          <div  id="sd" >
-     <Sidebar id="sidebar" 
-     width="280px"
-     backgroundColor="#F6E6E6"
-     
-     style={({ height: "110vh" })} >
-        <Menu>
-        <MenuItem
-        id="ln"
-            icon={col ?  <MenuOutlinedIcon />:<img src={inn}className="inn" />  }
-            onClick={() => {
-                
-              collapseSidebar();
-              setCOL(prevState => !prevState);
-            }}
-            style={({ textAlign: "center" })}
-          >
-
-           <div className="prfl">
-            <img src={profile} alt="" />
-            <a>Admin</a>
-            </div> 
-          </MenuItem>
-         
-         
-          <MenuItem icon={<img src={dashb} />} href="#" >dashboard</MenuItem>
-         <SubMenu icon={<img src={useradd} />  }  label="gérer les comptes">
-            <MenuItem  href="/AfficherComptes">affficher les comptes</MenuItem>
-            <MenuItem >ajouter un compte</MenuItem>
-           
-      </SubMenu>
           
-      <SubMenu icon={<img src={copy} />  }  label="gérer les structures">
-            <MenuItem  >affficher les structures</MenuItem>
-            <MenuItem >ajouter un structure</MenuItem>
-           
-      </SubMenu>
-          <MenuItem icon={<img src={random} />}>archivage</MenuItem>
-          <MenuItem icon={ <img src={group} />}>les fournisseurs</MenuItem>
-          <SubMenu icon={<img src={setting} />  }  label="paramètres">
-            <MenuItem  >modifier le logo</MenuItem>
-            <MenuItem >modifier le thème</MenuItem>
-            <MenuItem >modifier le nom du site</MenuItem>
-      </SubMenu>
-        </Menu>
-       
-      </Sidebar>
-        
-     
+              <Sidebar id="sidebar" 
+              width="310px"
+              backgroundColor="#F6E6E6"
+              
+              style={({ height: "110vh" })} >
+                 <Menu>
+                 <MenuItem
+                 id="ln"
+                     icon={col ?  <MenuOutlinedIcon />:<img src={inn}className="inn" />  }
+                     onClick={() => {
+                         setCol(prev => !prev);
+                       collapseSidebar();
+                       
+                     }}
+                     style={({ textAlign: "center" })}
+                   >
+         
+                    <div className="prfl">
+                     <img src={profile} alt="" />
+                     <a>Admin</a>
+                     </div> 
+                   </MenuItem>
+                  
+                  
+                   <MenuItem icon={<img src={dashb} />} href="#" >dashboard</MenuItem>
+                  <SubMenu icon={<img src={useradd} />  }  label="gérer les comptes">
+                     <MenuItem  href="/AfficherComptes">affficher les comptes</MenuItem>
+                     <MenuItem >ajouter un compte</MenuItem>
+                    
+               </SubMenu>
+                   
+               <SubMenu icon={<img src={copy} />  }  label="gérer les structures">
+                     <MenuItem href="/Structure" >affficher les structures</MenuItem>
+                     <MenuItem >ajouter un structure</MenuItem>
+                    
+               </SubMenu>
+                   <MenuItem icon={<img src={random} />}>archivage</MenuItem>
+                   <MenuItem icon={ <img src={group}  />} href="/Fournisseurs">les fournisseurs</MenuItem>
+                   <SubMenu icon={<img src={setting} />  }  label="paramètres">
+                     <MenuItem  >modifier le logo</MenuItem>
+                     <MenuItem >modifier le thème</MenuItem>
+                     <MenuItem >modifier le nom du site</MenuItem>
+               </SubMenu>
+                 </Menu>
+                
+               </Sidebar>
+            
+             
         </div>
      );
 }

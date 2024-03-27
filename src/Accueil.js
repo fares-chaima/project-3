@@ -1,10 +1,9 @@
 import "./css/Accueil.css";
-import NavBar from "./NavBar";
 const Accueil = () => {
   
     return (
 <>
-<NavBar />
+
         <div className="home">
         <div className="outer">
           <div className="inside">

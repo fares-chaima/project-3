@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "./NavBar";
 import './css/SignIn.css';
 import ConfPwd from './images/ConfPwd.svg';
 import hidePwdImg from './images/hide-password.svg';
@@ -10,7 +9,6 @@ const NewPwd = () => {
     const [isRevealPwd, setIsRevealPwd] = useState(false);
     return ( 
         <>
-        <NavBar />
         <div className="form">
             <form >
             <span>mot de passe <br /> oubli <span className="err">é</span> </span>

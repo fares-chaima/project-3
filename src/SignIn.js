@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import NavBar from "./NavBar";
 import './css/SignIn.css';
 import emailIcon from './images/email.svg';
 import hidePwdImg from './images/hide-password.svg';
@@ -12,7 +11,6 @@ const SignIn = () => {
     const [isRevealPwd, setIsRevealPwd] = useState(false);
     return ( 
       <>
-      <NavBar />
         <div className="form">
             <form >
              <span>Se connecter</span>

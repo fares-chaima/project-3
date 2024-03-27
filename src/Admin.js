@@ -1,9 +1,8 @@
-import { BrowserRouter as Router } from 'react-router-dom';
 import SideBar from "./SideBar";
 
 const Admin = () => {
     return ( 
-        <Router>
+        
         <div className="admin">
              
           <SideBar />
@@ -12,7 +11,7 @@ const Admin = () => {
                
             </div>
         </div>
-        </Router>
+        
      );
 }
  

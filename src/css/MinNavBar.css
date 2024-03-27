@@ -5,7 +5,6 @@ position: absolute;
    justify-content: space-between;
    width: 95%;
 height: 90px;
-gap: 0px;
 margin-left: 83px;
 border-radius: 0px 0px 60px 60px;
 border: 1px solid #01C7BE;
@@ -30,16 +29,19 @@ img{
    
     border-radius: 100%;
 }
+.logo{
+    margin-top: -10px;
+    ;
+}
 .logo span {
     font-size: 22px;
     font-weight: 700;
     line-height: 26.82px;
-    text-align: left;
-    
+    margin-top: -10px;
     }
     .logo img{
         width: 126px;
     height: 71px;
-    ;
+    
     
     }
