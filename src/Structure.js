@@ -27,7 +27,7 @@ const Structure = () => {
           field: "gérer",
           headerName: 'gérer',
           headerClassName: 'hdr',
-          width: 280,
+          width: 302,
           renderCell: (cellValues) => {
             return (
               <>

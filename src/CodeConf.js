@@ -11,7 +11,7 @@ const CodeConf = () => {
 
          <div className="email">
             <img src={codeconf} alt=""  />
-            <input type="email" name="email" id="email" placeholder='entrer le code de vérification' />
+            <input type="number" name="email" id="email" placeholder='entrer le code de vérification' />
 
          </div>
 

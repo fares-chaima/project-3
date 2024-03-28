@@ -39,7 +39,7 @@ const Fournisseurs = () => {
           field: "gérer",
           headerName: 'gérer',
           headerClassName: 'hdr',
-          width: 160,
+          width: 162,
           renderCell: (cellValues) => {
             return (
               <>

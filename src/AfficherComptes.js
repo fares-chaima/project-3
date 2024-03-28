@@ -12,14 +12,14 @@ const AfficherComptes = () => {
       field: 'nom',
       headerName: 'nom',
       headerClassName: 'hdr',
-      width: 150,
+      width: 162,
       editable: true,
     },
     {
       field: 'prenom',
       headerName: 'prenom',
       headerClassName: 'hdr',
-      width: 150,
+      width: 160,
     },
     {
       field: 'email',

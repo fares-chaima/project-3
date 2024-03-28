@@ -38,7 +38,7 @@ const SignIn = () => {
 
 
              </div>
-             <Link to="/PwdOublieForm">j’ai oublié le mot de passe</Link>
+             <Link to="/PwdOublieForm" className="rtr1">j’ai oublié le mot de passe</Link>
              <button>confirmer</button>
             </form>
         </div>
