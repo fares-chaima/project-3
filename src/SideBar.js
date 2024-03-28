@@ -50,13 +50,13 @@ const SideBar = () => {
                    <MenuItem icon={<img src={dashb} />} href="#" >dashboard</MenuItem>
                   <SubMenu icon={<img src={useradd} />  }  label="gérer les comptes">
                      <MenuItem  href="/AfficherComptes">affficher les comptes</MenuItem>
-                     <MenuItem >ajouter un compte</MenuItem>
+                     <MenuItem href="/AddCmpt">ajouter un compte</MenuItem>
                     
                </SubMenu>
                    
                <SubMenu icon={<img src={copy} />  }  label="gérer les structures">
                      <MenuItem href="/Structure" >affficher les structures</MenuItem>
-                     <MenuItem >ajouter un structure</MenuItem>
+                     <MenuItem href="/AddStructure" >ajouter un structure</MenuItem>
                     
                </SubMenu>
                    <MenuItem icon={<img src={random} />}>archivage</MenuItem>

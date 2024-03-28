@@ -1,25 +1,27 @@
 import { DataGrid } from "@mui/x-data-grid";
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 import SideBar from "./SideBar";
 import "./css/AfficherCmpt.css";
 import dlt from "./images/delete.svg";
 import mdf from "./images/modf.svg";
 
 const Structure = () => {
+  const history = useHistory();
+
     const columns = [
     
         {
           field: 'nom',
           headerName: 'nom',
           headerClassName: 'hdr',
-          width: 300,
-          editable: true,
+          flex: 1,
         },
         {
           field: 'responsable',
           headerName: 'le responsable',
           headerClassName: 'hdr',
-          width: 300,
+          flex: 1,
         },
       
         
@@ -27,7 +29,7 @@ const Structure = () => {
           field: "gérer",
           headerName: 'gérer',
           headerClassName: 'hdr',
-          width: 302,
+          flex: 1,
           renderCell: (cellValues) => {
             return (
               <>
@@ -52,7 +54,7 @@ const Structure = () => {
         <div className="comptes">    
           <SideBar />
         <div className="cmpt">           
-            <button>ajouter une structure</button>        
+            <button onClick={()=> history.push("/AddStructure")} >ajouter une structure</button>        
             <div style={{ height: 300, width: '100%' }}>
      
       <DataGrid

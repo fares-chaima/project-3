@@ -1,45 +1,47 @@
 import { DataGrid } from "@mui/x-data-grid";
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 import SideBar from "./SideBar";
 import "./css/AfficherCmpt.css";
 import dlt from "./images/delete.svg";
 import mdf from "./images/modf.svg";
 
 const AfficherComptes = () => {
+  const history = useHistory();
+
   const columns = [
     
     {
       field: 'nom',
       headerName: 'nom',
       headerClassName: 'hdr',
-      width: 162,
-      editable: true,
+      flex: 1,
     },
     {
       field: 'prenom',
       headerName: 'prenom',
       headerClassName: 'hdr',
-      width: 160,
+      flex: 1,
     },
     {
       field: 'email',
       headerName: 'email',
       headerClassName: 'hdr',
       type: '',
-      width: 250,
+      flex: 1,
     },
     {
       field: 'role',
       headerName: ' role',
       headerClassName: 'hdr',
-      width:190,
+      flex: 1,
     },
    
     {
       field: "gérer",
       headerName: 'gérer',
       headerClassName: 'hdr',
-      width: 140,
+      flex: 1,
       renderCell: (cellValues) => {
         return (
           <>
@@ -68,7 +70,7 @@ const AfficherComptes = () => {
         <div className="comptes">    
           <SideBar />
         <div className="cmpt">           
-            <button>ajouter une compte</button>        
+            <button onClick={()=> history.push("/AddCmpt")}>ajouter une compte</button>        
             <div style={{ height: 300, width: '100%' }}>
      
       <DataGrid

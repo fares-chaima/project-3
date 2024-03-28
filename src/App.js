@@ -4,6 +4,8 @@ import MinNavBar from "./MinNavBar";
 
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
+import AddCmpt from './AddCmpt';
+import AddStructure from './AddStructure';
 import Admin from './Admin';
 import AfficherComptes from './AfficherComptes';
 import CodeConf from './CodeConf';
@@ -63,6 +65,17 @@ function App() {
       <MinNavBar />
         <Fournisseurs />
       </Route>
+
+       <Route path="/AddCmpt">
+       <MinNavBar />
+        <AddCmpt />
+       </Route>
+
+       <Route path="/AddStructure">
+        <MinNavBar />
+        <AddStructure />
+       </Route>
+
       </Switch>
       </div>
     </div>

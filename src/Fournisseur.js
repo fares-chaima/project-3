@@ -12,34 +12,33 @@ const Fournisseurs = () => {
           field: 'nom',
           headerName: 'nom',
           headerClassName: 'hdr',
-          width: 150,
-          editable: true,
+          flex: 1,
         },
         {
           field: 'prenom',
           headerName: 'prenom',
           headerClassName: 'hdr',
-          width: 150,
+          flex: 1,
         },
         {
           field: 'email',
           headerName: 'email',
           headerClassName: 'hdr',
-          type: '',
-          width: 250,
+          flex: 1,
+         
         },
         {
           field: 'tel',
           headerName: ' num de tél',
           headerClassName: 'hdr',
-          width:190,
+          flex: 1,
         },
        
         {
           field: "gérer",
           headerName: 'gérer',
           headerClassName: 'hdr',
-          width: 162,
+          flex: 1,
           renderCell: (cellValues) => {
             return (
               <>
@@ -71,6 +70,18 @@ const Fournisseurs = () => {
             <div style={{ height: 300, width: '100%' }}>
      
       <DataGrid
+      sx={{
+        '.MuiDataGrid-columnSeparator': {
+          display: 'none',
+          
+        },
+        '&.MuiDataGrid-root': {
+          border: 'none',
+        },
+        
+       
+        
+      }}
       className='grid'
       style={{height: "66vh"}}
         rows={rows}
