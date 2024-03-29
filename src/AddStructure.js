@@ -4,6 +4,7 @@ import "./css/AddCmpt.css";
 import add from "./images/Add.svg";
 import nom from "./images/User_alt.svg";
 const AddStructure = () => {
+    //test
     return ( 
         <div className="pg">
         <SideBar />
