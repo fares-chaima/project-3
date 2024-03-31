@@ -1,11 +1,16 @@
 import { DataGrid } from "@mui/x-data-grid";
 import * as React from 'react';
+import { useHistory } from 'react-router-dom';
 import SideBar from "./SideBar";
 import "./css/AfficherCmpt.css";
 import dlt from "./images/delete.svg";
 import mdf from "./images/modf.svg";
 
+
 const Fournisseurs = () => {
+  const history = useHistory();
+
+
     const columns = [
     
         {
@@ -66,7 +71,7 @@ const Fournisseurs = () => {
         <div className="comptes">    
           <SideBar />
         <div className="cmpt">           
-            <button style={{width: "300px"}}>ajouter une fournisseur</button>        
+            <button style={{width: "300px"}}  onClick={()=> history.push("/AddFourn")}>ajouter une fournisseur</button>        
             <div style={{ height: 300, width: '100%' }}>
      
       <DataGrid

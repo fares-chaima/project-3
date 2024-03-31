@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import SideBar from "./SideBar";
 import "./css/AddCmpt.css";
 import nom from "./images/User_alt.svg";
-import hidePwdImg from './images/hide-password.svg';
+import adr from "./images/adr.svg";
 import mail from "./images/mail.svg";
-import pd from "./images/pd.svg";
 import prenom from "./images/prenom.svg";
 import role from "./images/role.svg";
-import showPwdImg from './images/show-password.svg';
-const AddCmpt = () => {
-    const [pwd, setPwd] = useState('');
-    const [isRevealPwd, setIsRevealPwd] = useState(false);
+import tel from './images/tel.svg';
+
+const AddFourn = () => {
+   
     return ( 
         <div className="pg">
             <SideBar />
             <form >
-                <span>ajouter un compte</span>
+                <span>ajouter un fournissour</span>
                 <div className="flx1">
                     
                     <div className="lft">
@@ -39,25 +38,15 @@ const AddCmpt = () => {
                         <input type="text" placeholder="role" />
                         </div>  
 
-                    <div className="pd">
-                        <img src={pd} alt="" />
-                    <input
-                name="pwd"
-                placeholder="mot de passe"
-                type={isRevealPwd ? "text" : "password"}
-                value={pwd}
-                onChange={e => setPwd(e.target.value)}
-                />
-              <img
-                title={isRevealPwd ? "Hide password" : "Show password"}
-                src={isRevealPwd ? hidePwdImg : showPwdImg}
-                onClick={() => setIsRevealPwd(prevState => !prevState)}
-                />
+                    <div className="tel">
+                        <img src={tel} alt="" />
+                   <input type="tel" name="" id="" placeholder="numéro de tél" />
+              
                         </div>         
 
-                    <div className="confpd">
-                    <img src={pd} alt="" />
-                        <input type="password" name="" id="" placeholder="confirmer le mot de passe"/>
+                    <div className="adr">
+                    <img src={adr} alt="" />
+                    <input type="text" name="" id="" placeholder="Adresse" />
                         </div>   
                     </div>
                     
@@ -65,7 +54,8 @@ const AddCmpt = () => {
                 <button>confirmer</button>
             </form>
         </div>
+
      );
 }
  
-export default AddCmpt;
+export default AddFourn;

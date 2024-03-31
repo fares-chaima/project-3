@@ -27,7 +27,7 @@ padding-bottom: 60px;
 .pg button{
     margin-top: 40px;
 }
- .nom, .prenom, .mail, .role, .pd, .confpd, .respn{
+ .nom, .prenom, .mail, .role, .pd, .confpd, .respn, .adr, .tel{
     width: 17.25em;
     height: auto;
     border-bottom: 2px solid;

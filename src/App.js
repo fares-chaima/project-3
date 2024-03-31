@@ -5,6 +5,7 @@ import MinNavBar from "./MinNavBar";
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
 import AddCmpt from './AddCmpt';
+import AddFourn from './AddFourn';
 import AddStructure from './AddStructure';
 import Admin from './Admin';
 import AfficherComptes from './AfficherComptes';
@@ -74,6 +75,11 @@ function App() {
        <Route path="/AddStructure">
         <MinNavBar />
         <AddStructure />
+       </Route>
+
+       <Route path="/AddFourn">
+        <MinNavBar />
+        <AddFourn />
        </Route>
 
       </Switch>
