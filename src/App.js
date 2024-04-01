@@ -11,6 +11,7 @@ import Admin from './Admin';
 import AfficherComptes from './AfficherComptes';
 import CodeConf from './CodeConf';
 import Fournisseurs from './Fournisseur';
+import ModifProfile from './ModifProfile';
 import NavBar from './NavBar';
 import NewPwd from './NewPwd';
 import PwdOublieForm from './PwdOublieForm';
@@ -80,6 +81,11 @@ function App() {
        <Route path="/AddFourn">
         <MinNavBar />
         <AddFourn />
+       </Route>
+
+       <Route path="/ModifProfile">
+        <MinNavBar />
+        <ModifProfile />
        </Route>
 
       </Switch>

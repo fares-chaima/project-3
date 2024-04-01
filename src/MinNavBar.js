@@ -27,7 +27,7 @@ const MinNavBar = () => {
             
             <div className="menu1">
             <a href="#">déconnexion</a>
-            <a href="#">modifier le profile</a>
+            <a href="/ModifProfile">modifier le profile</a>
            </div>
         
       }
