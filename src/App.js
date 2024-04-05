@@ -17,6 +17,13 @@ import NewPwd from './NewPwd';
 import PwdOublieForm from './PwdOublieForm';
 import SignIn from './SignIn';
 import Structure from './Structure';
+import AddArticle from './asa/AddArticle';
+import AddChapitre from './asa/AddChapitre';
+import AddProduit from './asa/AddProduit';
+import Articles from './asa/Articles';
+import Chapitres from './asa/Chapitres';
+import Produits from './asa/Produits';
+import ServiceAchat from './asa/ServiceAchat';
 function App() {
   return (
     <Router>
@@ -87,6 +94,41 @@ function App() {
         <MinNavBar />
         <ModifProfile />
        </Route>
+
+       <Route path="/ServiceAchat">
+        <ServiceAchat />
+       </Route>
+
+       <Route path="/Produits">
+        <MinNavBar />
+        <Produits />
+       </Route>
+
+       <Route path="/Articles">
+        <MinNavBar/>
+        <Articles />
+       </Route>
+
+       <Route path="/Chapitres">
+        <MinNavBar />
+        <Chapitres />
+       </Route>
+
+       <Route path="/AddProduit">
+        <MinNavBar/>
+        <AddProduit />
+       </Route>
+       
+       <Route path="/AddArticle">
+        <MinNavBar />
+        <AddArticle />
+       </Route>
+
+       <Route path="/AddChapitre">
+        <MinNavBar />
+        <AddChapitre />
+       </Route>
+
 
       </Switch>
       </div>

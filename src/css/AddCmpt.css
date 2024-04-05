@@ -27,7 +27,7 @@ padding-bottom: 60px;
 .pg button{
     margin-top: 45px;
 }
- .nom, .prenom, .mail, .role, .pd, .confpd, .respn, .adr, .tel{
+ .nom, .prenom, .mail, .role, .pd, .confpd, .respn, .adr, .tel, .id, .desc, .chap{
     width: 17.1em;
     height: auto;
     border-bottom: 2px solid;
@@ -37,14 +37,19 @@ padding-bottom: 60px;
    align-items: center;
   
 }
+.id, .desc{
+    margin-top: 15px ;
+}
 input{
     background-color: transparent;
+   
+   
 }
-.flx1, .flx2{
+.flx1, .flx2, .flx3{
     display: flex;
 }
 
-.flx2{
+.flx2, .flx3{
     margin-left: 150px;
 }
 .profileImg{
@@ -99,4 +104,16 @@ h6{
 .lft{
     margin-right: 100px;
 }
-
+.flx3 input{
+   
+}
+.chap select{
+    width: 280px; 
+   height:55px;
+   border-radius: 1px;
+   border: 0px ;
+font-size: 18px;
+font-weight: 400;
+line-height: 21.94px;
+padding: 2px;
+}

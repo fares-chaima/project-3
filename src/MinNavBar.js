@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./css/MinNavBar.css";
 import notif from "./images/Bell.png";
 import logo from './images/Logo.svg';
-import profile from "./images/profile.svg";
+import profile from "./images/prfl.jpg";
 const MinNavBar = () => {
     const [act, setAct] = useState(false);
     return ( 
@@ -14,7 +14,7 @@ const MinNavBar = () => {
             <span>NOVABYTE</span>
         </div>
         
-        <input type="search" name="" id="srch" icon />
+        <input type="search" name="" id="srch" icon placeholder="chercher un produit"/>
          <a href="#" className="notification"><img src={notif} alt="" /></a>
       <div className="pfl">
        <a  href="#" class="profile"  onClick={() => setAct(prev =>!prev)} >  <img src={profile} alt="" /></a>

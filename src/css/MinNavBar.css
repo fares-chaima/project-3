@@ -72,3 +72,9 @@ width: 240px;
  align-items: center;
  box-shadow: 0px 4px 4px 0px #00000040;
    }
+   .profile img{
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #2EDDD8
+   }

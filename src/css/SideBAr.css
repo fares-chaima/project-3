@@ -38,7 +38,7 @@ nav{
     margin-top: -0px;
 }
 .prfl{
-    width: 165px;
+    width: auto;
     text-decoration: none;
 height: 70px;
 display: flex;
@@ -58,7 +58,15 @@ text-decoration: none;
 }
 .prfl img {
     border-radius: 100%;
+    width: 65px;
+    height: 65px;
 }
 MenuItem {
     margin-left: 100px;
+}
+SubMenu img{
+    
+}
+img{
+    border-radius: 0px;
 }
