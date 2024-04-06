@@ -10,6 +10,7 @@ import AddStructure from './AddStructure';
 import Admin from './Admin';
 import AfficherComptes from './AfficherComptes';
 import CodeConf from './CodeConf';
+import Contact from './Contact';
 import Fournisseurs from './Fournisseur';
 import ModifProfile from './ModifProfile';
 import NavBar from './NavBar';
@@ -39,6 +40,11 @@ function App() {
           <NavBar />
         <Accueil  />
         </Route>
+
+        <Route path="/Contact">
+        <NavBar />
+        <Contact />
+       </Route>
 
       <Route  path="/SignIn">
       <NavBar />
@@ -135,6 +141,8 @@ function App() {
         <MinNavBarAsa />
         <ModifAsa />
        </Route>
+
+       
 
 
       </Switch>

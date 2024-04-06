@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import "../css/AfficherCmpt.css";
@@ -123,6 +123,7 @@ const Produits = () => {
        
         
       }}
+      slots={{ toolbar: GridToolbar }}
       className='grid'
       style={{height: "66vh"}}
         rows={rows}

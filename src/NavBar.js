@@ -19,10 +19,10 @@ const NavBar = () => {
 
         </div>
         <div className="links">
-            <Link to="/" className=""  onClick = {() => { setHm(true); setClck(false)} } style={ hm ? {textDecoration: "underline 5px solid #01C7BE"}: {}}  >Accueil</Link>
-            <Link to="#" onClick={()=>{setHm(false); setClck(false)}}>Contacter nous</Link>
+            <Link to="/" className=""  onClick = {() => { setCont(false);setHm(true); setClck(false)} } style={ hm ? {textDecoration: "underline 5px solid #01C7BE"}: {}}  >Accueil</Link>
+            <Link to="/Contact" onClick={()=>{setCont(true);setHm(false); setClck(false)}} style={cont ? {textDecoration: "underline 5px solid #01C7BE"}:{textDecoration: "none"}}>Contacter nous</Link>
             <Link to="/SignIn"    onClick={()=> {
-        setClck(true); setHm(false) } } 
+        setClck(true); setHm(false); setCont(false); } } 
         style={clck ? {textDecoration: "underline 5px solid #01C7BE"}:{textDecoration: "none"}}>Se connecter
         </Link>
         </div>

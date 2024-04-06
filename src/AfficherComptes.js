@@ -1,4 +1,4 @@
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import SideBar from "./SideBar";
@@ -74,6 +74,20 @@ const AfficherComptes = () => {
             <div style={{ height: 300, width: '100%' }}>
      
       <DataGrid
+      sx={{
+        '.MuiDataGrid-columnSeparator': {
+          display: 'none',
+          
+        },
+        '&.MuiDataGrid-root': {
+          border: 'none',
+        },
+        
+       
+        
+      }}
+            slots={{ toolbar: GridToolbar }}
+
       className='grid'
       style={{height: "66vh"}}
         rows={rows}
