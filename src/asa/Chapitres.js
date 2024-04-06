@@ -25,8 +25,8 @@ const Chapitres = () => {
           flex: 1,
         },
         {
-          field: 'Designation',
-          headerName: 'Designation',
+          field: 'description',
+          headerName: 'description',
           headerClassName: 'hdr',
           flex: 1,
         },
@@ -52,14 +52,14 @@ const Chapitres = () => {
         },
       ];
       const rows = [
-        { id: 1,nom:'chapitre', Designation: 'pc', },
-        { id: 2,nom:'chapitre',  Designation: 'pc',},
-        { id: 3, nom:'chapitre', Designation: 'pc',},
-        { id: 4, nom:'chapitre', Designation: 'pc',},
-        { id: 5,nom:'chapitre', Designation: 'pc',},
-        { id: 6,nom:'chapitre', Designation: 'pc',},
-        { id: 7,nom:'chapitre',  Designation: 'pc',},
-        { id: 8,nom:'chapitre', Designation: 'pc',},
+        { id: 1,nom:'chapitre', description: 'pc', },
+        { id: 2,nom:'chapitre',  description: 'pc',},
+        { id: 3, nom:'chapitre', description: 'pc',},
+        { id: 4, nom:'chapitre', description: 'pc',},
+        { id: 5,nom:'chapitre', description: 'pc',},
+        { id: 6,nom:'chapitre', description: 'pc',},
+        { id: 7,nom:'chapitre',  description: 'pc',},
+        { id: 8,nom:'chapitre', description: 'pc',},
       ];
     
     return ( 

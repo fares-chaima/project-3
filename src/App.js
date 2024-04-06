@@ -22,6 +22,8 @@ import AddChapitre from './asa/AddChapitre';
 import AddProduit from './asa/AddProduit';
 import Articles from './asa/Articles';
 import Chapitres from './asa/Chapitres';
+import MinNavBarAsa from './asa/MinNavBarAsa';
+import ModifAsa from './asa/ModifAsa';
 import Produits from './asa/Produits';
 import ServiceAchat from './asa/ServiceAchat';
 function App() {
@@ -100,33 +102,38 @@ function App() {
        </Route>
 
        <Route path="/Produits">
-        <MinNavBar />
+        <MinNavBarAsa />
         <Produits />
        </Route>
 
        <Route path="/Articles">
-        <MinNavBar/>
+        <MinNavBarAsa/>
         <Articles />
        </Route>
 
        <Route path="/Chapitres">
-        <MinNavBar />
+        <MinNavBarAsa />
         <Chapitres />
        </Route>
 
        <Route path="/AddProduit">
-        <MinNavBar/>
+        <MinNavBarAsa/>
         <AddProduit />
        </Route>
        
        <Route path="/AddArticle">
-        <MinNavBar />
+        <MinNavBarAsa />
         <AddArticle />
        </Route>
 
        <Route path="/AddChapitre">
-        <MinNavBar />
+        <MinNavBarAsa />
         <AddChapitre />
+       </Route>
+
+       <Route path="/ModifAsa">
+        <MinNavBarAsa />
+        <ModifAsa />
        </Route>
 
 

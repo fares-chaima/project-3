@@ -21,9 +21,7 @@ const AddArticle = () => {
                     </div>
                     <div className="chap">
                         <img src={chp} alt="" />
-                        <select name="" id="" >
-                            <option value="chap1">chapitre1 </option>
-                        </select>
+                        <input type="text" placeholder="chapitre"  />
                     </div>
                     <div className="desc">
                         <img src={add} alt="" />

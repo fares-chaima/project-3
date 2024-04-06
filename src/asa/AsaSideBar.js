@@ -33,9 +33,9 @@ const AsaSideBar = () => {
                style={({ textAlign: "center" })}
              >
    
-              <div className="prfl">
+              <div className="prfl" >
                <img src={logo} alt="" />
-               <a>NOVABYTE</a>
+               <a href="/ServiceAchat">NOVABYTE</a>
                </div> 
              </MenuItem>
             

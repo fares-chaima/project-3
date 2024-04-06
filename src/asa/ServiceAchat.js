@@ -31,7 +31,7 @@ const ServiceAchat = () => {
             
             <div className="menu2">
             <a href="#">déconnexion</a>
-            <a href="/ModifProfile">modifier le profile</a>
+            <a href="/ModifAsa">modifier le profile</a>
            </div>
         
       }
@@ -39,16 +39,16 @@ const ServiceAchat = () => {
 
           <div className="fx2">
             <div className="top">
-                  <a className="prd" href="Produits">
+                  <a className="prd" href="/Produits">
                    
                     <img src={produit} alt="" />
                     <span>Produits</span>
                   </a>
-                  <a className="artcl">
+                  <a className="artcl" href="/Articles">
                   <img src={article} alt="" />
                   <span>Articles</span>
                   </a>
-                  <a className="chp">
+                  <a className="chp" href="/Chapitres">
                   <img src={chapitre} alt="" />
                   <span>Chapitres</span>
                   </a>
@@ -62,7 +62,7 @@ const ServiceAchat = () => {
                 <img src={stat} alt="" />
                 <span>Statistique</span>
                 </a>
-                <a className="prf">
+                <a className="prf"  href="/ModifAsa">
                 <img src={prf} alt="" />
                 <span>Profil </span>
                 </a>

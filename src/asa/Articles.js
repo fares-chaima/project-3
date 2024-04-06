@@ -25,17 +25,18 @@ const Articles = () => {
           flex: 1,
         },
         {
+          field: 'description',
+          headerName: 'description',
+          headerClassName: 'hdr',
+          flex: 1,
+        },
+        {
           field: 'chapitre',
           headerName: 'chapitre',
           headerClassName: 'hdr',
           flex: 1,
         },
-        {
-          field: 'Designation',
-          headerName: 'Designation',
-          headerClassName: 'hdr',
-          flex: 1,
-        },
+       
         
        
        
@@ -58,14 +59,14 @@ const Articles = () => {
         },
       ];
       const rows = [
-        { id: 1,nom: 'aricle', chapitre:'chapitre', Designation: 'pc', },
-        { id: 2, nom: 'aricle', chapitre:'chapitre', Designation: 'pc',},
-        { id: 3, nom: 'aricle', chapitre:'chapitre', Designation: 'pc',},
-        { id: 4,nom: 'aricle', chapitre:'chapitre',  Designation: 'pc',},
-        { id: 5, nom: 'aricle', chapitre:'chapitre',Designation: 'pc',},
-        { id: 6,nom: 'aricle', chapitre:'chapitre', Designation: 'pc',},
-        { id: 7, nom: 'aricle', chapitre:'chapitre', Designation: 'pc',},
-        { id: 8, nom: 'aricle', chapitre:'chapitre',Designation: 'pc',},
+        { id: 1,nom: 'aricle',description: 'pc', chapitre:'chapitre',  },
+        { id: 2, nom: 'aricle', description: 'pc', chapitre:'chapitre',},
+        { id: 3, nom: 'aricle',description: 'pc', chapitre:'chapitre',},
+        { id: 4,nom: 'aricle',description: 'pc', chapitre:'chapitre',},
+        { id: 5, nom: 'aricle', description: 'pc', chapitre:'chapitre',},
+        { id: 6,nom: 'aricle', description: 'pc', chapitre:'chapitre',},
+        { id: 7, nom: 'aricle', description: 'pc', chapitre:'chapitre',},
+        { id: 8, nom: 'aricle',description: 'pc', chapitre:'chapitre',},
       ];
     
     return ( 

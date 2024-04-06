@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import SideBar from "./SideBar";
-import "./css/AddCmpt.css";
-import nom from "./images/User_alt.svg";
-import mail from "./images/mail.svg";
-import modif from "./images/modif.svg";
-import pd from "./images/pd.svg";
-import prfl from "./images/prfl.jpg";
-import role from "./images/tel.svg";
-const ModifProfile = () => {
-const [name, setName] = useState("belhouari essadjidet");
+import "../css/AddCmpt.css";
+import nom from "../images/User_alt.svg";
+import mail from "../images/mail.svg";
+import modif from "../images/modif.svg";
+import pd from "../images/pd.svg";
+import prfl from "../images/prfl.jpg";
+import role from "../images/tel.svg";
+import AsaSideBar from "./AsaSideBar";
+
+
+const ModifAsa = () => {
+    const [name, setName] = useState("belhouari essadjidet");
 const [email, setEmail] = useState("e.belhouari@esi-sba.dz");
 const [pass, setPass] = useState("123");
-const [rol, setRol] = useState("0554338877");
-    return ( 
+const [rol, setRol] = useState("0554443034");
+    return (
 <div className="pg">
-            <SideBar />
+            <AsaSideBar />
             <form >
                 <span>modifier le profile</span>
                 <img src={prfl} alt=""className="profileImg"/>
@@ -66,7 +68,7 @@ const [rol, setRol] = useState("0554338877");
                 <button>confirmer</button>
             </form>
         </div>
-     );
+      );
 }
  
-export default ModifProfile;
+export default ModifAsa;
