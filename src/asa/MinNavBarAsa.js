@@ -15,7 +15,6 @@ const MinNavBarAsa = () => {
                 <span>NOVABYTE</span>
             </div>
             
-            <input type="search" name="" id="srch" icon placeholder="chercher un produit"/>
              <a href="#" className="notification"><img src={notif} alt="" /></a>
           <div className="pfl">
            <a  href="#" class="profile"  onClick={() => setAct(prev =>!prev)} >  <img src={profile} alt="" /></a>

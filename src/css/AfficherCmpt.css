@@ -70,6 +70,7 @@ margin-bottom: 10PX;
     background-color: #EFECEC; 
     
   }
+  
   .MuiDataGrid-row:nth-child(even){
     background-color: #EFECEC;
    
@@ -281,4 +282,8 @@ text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+.send:hover, .send1:hover{
+color: #01C7BE;
+cursor: pointer;
 }

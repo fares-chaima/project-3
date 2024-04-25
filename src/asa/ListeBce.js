@@ -1,9 +1,11 @@
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import PrintIcon from '@mui/icons-material/Print';
+import SendIcon from '@mui/icons-material/Send';
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import "../css/AfficherCmpt.css";
-import dlt from "../images/delete.svg";
-import mdf from "../images/modf.svg";
 import AsaSideBar from "./AsaSideBar";
 const ListeBce = () => {
     const history = useHistory();
@@ -13,7 +15,7 @@ const ListeBce = () => {
     
         {
           field: 'num',
-          headerName: 'N° DE BON DE COMMANDE',
+          headerName: 'N° DE BCE',
           headerClassName: 'hdr',
           flex: 1,
         },
@@ -35,12 +37,29 @@ const ListeBce = () => {
           flex: 1,
           renderCell: (cellValues) => {
             return (
-              <>
+              
               <div className="change">
-              <img src={dlt} alt="dlt" />
-              <img src={mdf} alt="mdf" />
+              <DeleteIcon fontSize="large" className='send1'/>
+              <EditIcon fontSize="large" className='send1' />
+              <PrintIcon fontSize="large" className='send1'  />
               </div>
-              </>
+              
+            );
+              }
+        },
+        {
+          field: "valider",
+          headerName: 'Valider',
+          headerClassName: 'hdr',
+          flex: 1,
+          renderCell: (cellValues) => {
+            return (
+              
+              <div className="change">
+              <SendIcon fontSize="large" className='send'/>
+              
+              </div>
+              
             );
               }
         },
@@ -81,7 +100,7 @@ const ListeBce = () => {
       columns={columns}    
       rowHeight={70}
       autoPageSize
-      disableRowSelectionOnClick
+      
      getRowClassName={(params) =>
   params.indexRelativeToCurrentPage % 2 === 0 ? 'Mui-even' : 'Mui-odd'
 }

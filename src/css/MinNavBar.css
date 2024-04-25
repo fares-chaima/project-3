@@ -13,18 +13,7 @@ box-shadow: 0px 4px 4px 0px #00000040;
 
 
 }
-#srch{
-    background-image: url(../images/Search.svg);
-    background-position: left;
-    background-repeat: no-repeat;
-    margin-left: 220px;
-    padding-left: 25px;
-    width: 323px;
-    height: 40px;
-    border-radius: 90px ;
-    box-shadow: 0px 4px 20px 0px #00000040;
 
-}
 img{
    
     border-radius: 100%;
@@ -76,5 +65,12 @@ width: 240px;
     border-radius: 100%;
     width: 70px;
     height: 70px;
-    border: 1px solid #2EDDD8
+    border: 1px solid #2EDDD8;
+    margin-right: 10px;
+   }
+   .pfl{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
    }
