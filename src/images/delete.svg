@@ -1,30 +1,3 @@
-<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g clip-path="url(#clip0_203_2558)">
-<rect width="1440" height="1024" transform="translate(-1080 -338)" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-2" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-859" y="-11" width="1040" height="70" fill="white"/>
-<rect x="-859" y="-11" width="1040" height="70" stroke="black"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-2" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-841" y="-3" width="1004" height="70" fill="white"/>
-<rect x="-859" y="-11" width="1040" height="70" fill="white"/>
-<rect x="-859" y="-11" width="1040" height="70" stroke="black"/>
-<rect width="42" height="42" rx="10" fill="#F81B1B"/>
-<rect x="7" y="4" width="28" height="28" fill="url(#pattern0)"/>
-</g>
-<defs>
-<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_203_2558" transform="scale(0.0178571)"/>
-</pattern>
-<clipPath id="clip0_203_2558">
-<rect width="1440" height="1024" fill="white" transform="translate(-1080 -338)"/>
-</clipPath>
-<image id="image0_203_2558" width="56" height="56" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAAAXNSR0IArs4c6QAABFJJREFUaAXtWitsFUEUraioqEAgKioqKiBBICoqEIgKRAWiAoGoqKhAVFRUICoQFYiKipI0oaKCpIiKCgQCgUAgKvgJAnWEtARBCAmQHPbS3ebOyczuvTPvvbSBTTZvPvece87uezOz83Zo6F88AIwBmFDntCrrdm/5MgA5vbhYPGsaM90rALs4v8duq0kAU+fX26nyqaRJAJMAfp2Gnr+CaJ9MGpQOAAsADgAcAjgij9/qdunznkTlxjf5RIM+RKP0ieaFVnPcCeCGZgLwjGOsdeKBFcdxooG4ZjjGXAdwhcjem8EUSDwlBuVu6eMSpbJXAYxqJgA/7OgwknhKDPIYMRpmctYAfCVxtvmG8hBHlsF6ftZUx5TGXwXwSjPKVOJn+Tt4BTSZHDK56+MghyfAVIb2NWM1Wt0MAowV4si9g3PEs29Mnw6rvhabRLqUjk73EEeuwSXi2UhnNPYAuEuk943QIIw4cg2uE89KkCSnUk2i80T6KJMnoMnkeByQALdzeAJMNbFeJ9LnQYCxQhy5d/AF8Vwzpk+H1Y82mvdzbVqMe07NIWUPtonlpeNEWrmxB8AwKzsrdaOF7jBZwZwVU0rH927lxggAbxXxWSm+NsrvDqsW3Tx6iWFZ1XtOvjAerMTyRc4azaNuARTPP+wumqilsVfzcTQFgGUS6F5BEN49TQDYIo47UbE5jdWCm9eAe14eEpdj8AlxZK2Jo7oBFK/iSVyOwZ481aQMjpPAo2hgSyPhcwzyXszFlnT+rshu24iHpcRgNchdIHz2zkJSc71zpfO49kI0UMrJRJGOyN7Qu0hYWVM952mdrt0sDcwwOEv4p2VuIuhqQ3WHksxHwpJNhPXewUXCbycT5XYAWKMkqx4uwnoN3iO8K7dJJwC+ilsmYB1EAr0Gi749Jp0Ain4HhQZlLaoP1+/favCqzgDgC4CHjpPgLizPga4R3GqQ5yIWPMi6aw42GZSgakX/e5AuErl+mgV7AwF8SCQdZPMbr25zPICn5GSj3laUrcWuk6Cd8Q3fAwK6n2Q8BvmZbNEKJpHmaaIXz6JWjfIbXCWha1Yw4TwGi3cTrBrFIO9y71jBBQb3CHvLmtMdB2CGkpn/0iac5w6+JGz5bnbKef0Whs53mIrldg2SMven6gA+EbZ8N7sl2Qgl8wgNoKkcur1a4Gfn0zyuMoDjQCkwbiEgjOnClHxjLJqiMdWim38T09FAasw0KH+66CPrny2S0l4FwKPaXDvipFerlLIRw6N273azUwIAyOpFH8upWN2uAVLWfalyybyb4uxsB7BCYtc7QScL9QBmxGwHIKB3u9kpAZG5UIbxzoGGhHbewXqA4T88+zcHNobroZsfQOXto48dJ3vsiuc3mtybzY1m92dkAczi+1Hv/9dTX4nINmI/TDWcmzr3wMr1v07yniZ/nRphJZ/CKXPu7MAMpRLVLyrEXhznNs9L6cOpfP/b1RX4A5M2R7L05X1tAAAAAElFTkSuQmCC"/>
-</defs>
+<svg width="34" height="37" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.6667 8.66667V7.33333C23.6667 5.46649 23.6667 4.53307 23.3034 3.82003C22.9838 3.19282 22.4738 2.68289 21.8466 2.36331C21.1336 2 20.2002 2 18.3333 2H15.6667C13.7998 2 12.8664 2 12.1534 2.36331C11.5262 2.68289 11.0162 3.19282 10.6966 3.82003C10.3333 4.53307 10.3333 5.46649 10.3333 7.33333V8.66667M13.6667 17.8333V26.1667M20.3333 17.8333V26.1667M2 8.66667H32M28.6667 8.66667V27.3333C28.6667 30.1336 28.6667 31.5337 28.1217 32.6033C27.6423 33.5441 26.8774 34.309 25.9366 34.7884C24.8671 35.3333 23.4669 35.3333 20.6667 35.3333H13.3333C10.5331 35.3333 9.13294 35.3333 8.06338 34.7884C7.12257 34.309 6.35767 33.5441 5.8783 32.6033C5.33333 31.5337 5.33333 30.1336 5.33333 27.3333V8.66667" stroke="#838383" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

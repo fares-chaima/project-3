@@ -18,13 +18,17 @@ const AddFourn = () => {
                 <div className="flx1">
                     
                     <div className="lft">
-                        <div className="nom">
+                        <div className="nomf" >
                             <img src={nom} alt="" />
-                            <input type="text"  placeholder="nom"/>
+                            <textarea
+                         
+                      placeholder={"Nom ou raison sociale (mentionner la forme juridique):"}
+                      />
+                            
                         </div>
                         <div className="prenom">
                             <img src={prenom} alt="" />
-                            <input type="text" placeholder="prenom"  />
+                            <input type="text" placeholder="N° R.C:"  />
                         </div>
                         <div className="mail">
                             <img src={mail} alt="" />
@@ -35,12 +39,12 @@ const AddFourn = () => {
                     <div className="rght">   
                     <div className="role">
                         <img src={role} alt="" />
-                        <input type="text" placeholder="role" />
+                        <input type="text" placeholder="RIB (ou RIP) :" />
                         </div>  
 
                     <div className="tel">
                         <img src={tel} alt="" />
-                   <input type="tel" name="" id="" placeholder="numéro de tél" />
+                   <input type="tel"  placeholder="Téléphone et Fax:" />
               
                         </div>         
 
@@ -50,6 +54,10 @@ const AddFourn = () => {
                         </div>   
                     </div>
                     
+                </div>
+                <div className="nf">
+                <img src={role} alt="" />
+                <input type="text" name="NIF" placeholder="numéro d'identification fiscale (NIF):" />
                 </div>
                 <button>confirmer</button>
             </form>

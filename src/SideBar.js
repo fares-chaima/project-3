@@ -25,9 +25,9 @@ const SideBar = () => {
           
               <Sidebar id="sidebar" 
               width="310px"
-              backgroundColor="#F6E6E6"
-              
-              style={({ height: "110vh" })} >
+              backgroundColor ="#00837D"
+              style={({ height: "110vh" })}
+               >
                  <Menu>
                  <MenuItem
                  id="ln"

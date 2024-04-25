@@ -18,7 +18,7 @@ const AsaSideBar = () => {
           
         <Sidebar id="sidebar" 
         width="310px"
-        backgroundColor="#F6E6E6"
+        backgroundColor="#00837D"
         
         style={({ height: "110vh" })} >
            <Menu>
@@ -57,7 +57,7 @@ const AsaSideBar = () => {
                <MenuItem href="/Chapitres" >afficher les chapitres</MenuItem>
                <MenuItem href="/AddChapitre" >ajouter un chapitre</MenuItem>
          </SubMenu>
-         <MenuItem icon={<img src={cbe} />}>CBE</MenuItem>
+         <MenuItem href="/ListeBce" icon={<img src={cbe}  />}>CBE</MenuItem>
            </Menu>
           
          </Sidebar>

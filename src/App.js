@@ -19,10 +19,12 @@ import PwdOublieForm from './PwdOublieForm';
 import SignIn from './SignIn';
 import Structure from './Structure';
 import AddArticle from './asa/AddArticle';
+import AddBce from './asa/AddBce';
 import AddChapitre from './asa/AddChapitre';
 import AddProduit from './asa/AddProduit';
 import Articles from './asa/Articles';
 import Chapitres from './asa/Chapitres';
+import ListeBce from './asa/ListeBce';
 import MinNavBarAsa from './asa/MinNavBarAsa';
 import ModifAsa from './asa/ModifAsa';
 import Produits from './asa/Produits';
@@ -142,6 +144,15 @@ function App() {
         <ModifAsa />
        </Route>
 
+       <Route path="/ListeBce">
+        <MinNavBar />
+        <ListeBce />
+       </Route>
+
+       <Route path="/AddBce">
+        <MinNavBar/>
+        <AddBce />
+       </Route>
        
 
 

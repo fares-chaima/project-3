@@ -1,0 +1,99 @@
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import * as React from 'react';
+import { useHistory } from 'react-router-dom';
+import "../css/AfficherCmpt.css";
+import dlt from "../images/delete.svg";
+import mdf from "../images/modf.svg";
+import AsaSideBar from "./AsaSideBar";
+const ListeBce = () => {
+    const history = useHistory();
+
+
+    const columns = [
+    
+        {
+          field: 'num',
+          headerName: 'N° DE BON DE COMMANDE',
+          headerClassName: 'hdr',
+          flex: 1,
+        },
+        {
+          field: 'date',
+          headerName: 'Date',
+          headerClassName: 'hdr',
+          flex: 1,
+        },
+        
+        
+       
+       
+       
+        {
+          field: "action",
+          headerName: 'Action',
+          headerClassName: 'hdr',
+          flex: 1,
+          renderCell: (cellValues) => {
+            return (
+              <>
+              <div className="change">
+              <img src={dlt} alt="dlt" />
+              <img src={mdf} alt="mdf" />
+              </div>
+              </>
+            );
+              }
+        },
+      ];
+      const rows = [
+        { id: 1,num:'Commande N° 31', date: '20-04-2023', },
+        { id: 2,num:'Commande N° 32', date: '20-04-2023',},
+        { id: 3, num:'Commande N° 33', date: '20-04-2023',},
+        { id: 4, num:'Commande N° 34', date: '20-04-2023',},
+        { id: 5,num:'Commande N° 35', date: '20-04-2023',},
+        
+      ];
+    return ( 
+        <div className="comptes">    
+        <AsaSideBar />
+      <div className="cmpt">           
+          <button style={{width: "300px"}}  onClick={()=> history.push("/AddBce")}>CREER UN BON DE COMMANDE</button>        
+          <div style={{ height: 300, width: '100%' }}>
+   
+    <DataGrid
+    sx={{
+      '.MuiDataGrid-columnSeparator': {
+        display: 'none',
+        
+      },
+      '&.MuiDataGrid-root': {
+        border: 'none',
+      },
+      
+     
+      
+    }}
+    slots={{ toolbar: GridToolbar }}
+
+    className='grid'
+    style={{height: "66vh"}}
+      rows={rows}
+      columns={columns}    
+      rowHeight={70}
+      autoPageSize
+      disableRowSelectionOnClick
+     getRowClassName={(params) =>
+  params.indexRelativeToCurrentPage % 2 === 0 ? 'Mui-even' : 'Mui-odd'
+}
+   
+    />
+ 
+  </div>
+              </div>
+          
+      </div>
+   );
+    
+}
+ 
+export default ListeBce;
