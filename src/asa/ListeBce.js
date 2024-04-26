@@ -24,6 +24,7 @@ const ListeBce = () => {
           headerName: 'Date',
           headerClassName: 'hdr',
           flex: 1,
+          
         },
         
         
@@ -34,12 +35,13 @@ const ListeBce = () => {
           field: "action",
           headerName: 'Action',
           headerClassName: 'hdr',
+          
           flex: 1,
           renderCell: (cellValues) => {
             return (
               
               <div className="change">
-              <DeleteIcon fontSize="large" className='send1'/>
+              <DeleteIcon fontSize="large" className='send2'/>
               <EditIcon fontSize="large" className='send1' />
               <PrintIcon fontSize="large" className='send1'  />
               </div>
@@ -51,7 +53,8 @@ const ListeBce = () => {
           field: "valider",
           headerName: 'Valider',
           headerClassName: 'hdr',
-          flex: 1,
+         
+          flex: 0,
           renderCell: (cellValues) => {
             return (
               

@@ -63,8 +63,15 @@ margin-bottom: 10PX;
 .hdr{
     background-color: #01C7BE;
     color: #FFFFFF;
+    text-align: center;
    
 }
+/*.css-t89xny-MuiDataGrid-columnHeaderTitle{
+  margin-left: 5vh;
+}
+.css-1tu88dm-MuiDataGrid-root .MuiDataGrid-columnHeaderTitleContainerContent {
+  margin-left: -5vh;
+}*/
 
 .MuiDataGrid-row.Mui-odd {
     background-color: #EFECEC; 
@@ -286,4 +293,11 @@ text-align: center;
 .send:hover, .send1:hover{
 color: #01C7BE;
 cursor: pointer;
+}
+.send1, .send2{
+  margin-right: 10px;
+}
+.send2:hover{
+ color: red;
+ cursor: pointer;
 }
