@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import MinNavBar from "./MinNavBar";
-
+import Bci from "./Bci";
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
 import AddCmpt from './AddCmpt';
@@ -29,6 +29,10 @@ import MinNavBarAsa from './asa/MinNavBarAsa';
 import ModifAsa from './asa/ModifAsa';
 import Produits from './asa/Produits';
 import ServiceAchat from './asa/ServiceAchat';
+import SideBar from './SideBar';
+import Bnreception from './Bnreception';
+import Sidebnr from './asa/Sidebnr';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
@@ -153,7 +157,37 @@ function App() {
         <MinNavBar/>
         <AddBce />
        </Route>
+
+       <Route exact path="/Bci">
+       <MinNavBar/>
+        <Bci  />
+        <Sidebnr/>
+        
        
+        </Route>
+
+        <Route exact path="/Bnreception">
+        <MinNavBar  className=''/>
+        <div className='align'>
+        <Sidebnr/>
+        <Bnreception  />
+       
+        </div>
+        
+       
+        </Route>
+
+        <Route exact path="/Sidebnr">
+        <MinNavBar  className=''/>
+        <div className=''>
+        <Sidebnr/>
+       
+        </div>
+        
+       
+        </Route>
+       
+
 
 
       </Switch>
