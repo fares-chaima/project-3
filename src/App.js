@@ -33,9 +33,8 @@ import SideBar from './SideBar';
 import Bnreception from './Bnreception';
 import Sidebnr from './asa/Sidebnr';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListeDeBCI from "./pages/ListeDeBCI";
 import Sidebarbci from "./bci/Sidebarbci"
-import Creerbci from './bci/Creerbci'
+import Creerbci from './bci/Creerbci';
 function App() {
   return (
     <Router>
@@ -201,11 +200,7 @@ function App() {
        
         </Route>
 
-        <Route exact path="/ListeDeBCI">
-       <ListeDeBCI/>
-       
-        </Route>
-
+      
         
         <Route exact path="/Bci">
           <MinNavBar/>
