@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import MinNavBar from "./MinNavBar";
-import Bci from "./Bci";
+import Bci from "./bci/Bci"
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
 import AddCmpt from './AddCmpt';
@@ -33,6 +33,9 @@ import SideBar from './SideBar';
 import Bnreception from './Bnreception';
 import Sidebnr from './asa/Sidebnr';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ListeDeBCI from "./pages/ListeDeBCI";
+import Sidebarbci from "./bci/Sidebarbci"
+import Creerbci from './bci/Creerbci'
 function App() {
   return (
     <Router>
@@ -158,10 +161,10 @@ function App() {
         <AddBce />
        </Route>
 
-       <Route exact path="/Bci">
-       <MinNavBar/>
-        <Bci  />
-        <Sidebnr/>
+       <Route exact path="/Sidebarbci">
+     
+    
+        <Sidebarbci/>
         
        
         </Route>
@@ -186,6 +189,58 @@ function App() {
         
        
         </Route>
+
+
+          <Route exact path="/Sidebnr">
+        <MinNavBar  className=''/>
+        <div className=''>
+        <Sidebnr/>
+       
+        </div>
+        
+       
+        </Route>
+
+        <Route exact path="/ListeDeBCI">
+       <ListeDeBCI/>
+       
+        </Route>
+
+        
+        <Route exact path="/Bci">
+          <MinNavBar/>
+          <div className='alignbci'>
+          <Sidebarbci/>
+           <Bci/>
+
+
+          </div>
+      
+       
+        </Route>
+
+        <Route exact path="/Creerbci">
+        <MinNavBar/>
+       
+       <div className='aligncreerbci'>
+          <Sidebarbci/>
+          <Creerbci/>
+
+
+          </div>
+      
+       
+        </Route>
+
+        
+
+
+
+        
+
+
+
+
        
 
 
