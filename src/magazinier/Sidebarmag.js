@@ -3,21 +3,31 @@ import { useState } from "react";
 import { Menu, MenuItem, Sidebar, SubMenu, useProSidebar } from "react-pro-sidebar";
 import "../css/SideBAr.css";
 import logo from "../images/Logo.svg";
-import articles from "../images/article.svg";
-import cbe from "../images/cbe.svg";
-import chap from "../images/chapitre.svg";
-import dashb from "../images/dashb.svg";
+
 import inn from "../images/in.svg";
-import produits from "../images/produits.svg";
+
 import "../css/Sidebnr.css";
 import { RiFileList2Fill } from "react-icons/ri";
 import { SiStatista } from "react-icons/si";
+import barchart from "./imagesmaga/Bar chart.svg";
+import Assignment from "./imagesmaga/Assignment.png";
+import Listalt from "./imagesmaga/List alt.svg";
+import Inventory from "./imagesmaga/Inventory.svg";
+import receiptlong from "./imagesmaga/Receipt long.png";
+import vector from "./imagesmaga/Vector.png";
+import invo2 from "./imagesmaga/Inventory 2.svg";
+import group from "./imagesmaga/Group.png";
+import DASH from "./imagesmaga/Group.svg";
 
-import DASH from "../magazinier/imagesmaga/Assignment.png";
+
+
 const Sidebarbci = () => {
-    const { collapseSidebar   } = useProSidebar();
+
+ 
+ const { collapseSidebar   } = useProSidebar();
     
     const [col, setCol] = useState(false);
+  
     return ( 
         <div  id="sd" >
           
@@ -40,20 +50,25 @@ const Sidebarbci = () => {
    
               <div className="prfl" >
                <img src={logo} alt="" />
-               <a className="titremagazinier" href="/Magazinier" style={{fontSize:'15px'}}>CONSOMATEUR</a>
+               <a className="titremagazinier" href="/Magazinier" style={{fontSize:'15px'}}>MAGASINIER</a>
                </div> 
              </MenuItem>
+
+             <MenuItem className=' sidebci' icon={<img src={Listalt} />
+} href="/ListeBce" >Liste des BCE</MenuItem>
+<MenuItem className=' sidebci' icon={<img src={Inventory}/>} href="#"  
+
+>Liste des BLE</MenuItem>
+<MenuItem className=' sidebci' icon= {<img src={Assignment}/>
+} href="/Bci"  >Liste des BCI</MenuItem>
+<MenuItem className=' sidebci' icon={<img src={receiptlong}/>
+} href="#" >Lise des BS</MenuItem>
+<MenuItem className=' sidebci' icon={<img src={vector}/>
+} href="#" >Lise des BD</MenuItem>
+<MenuItem className=' sidebci' icon={<img src={group}/>
+} href="#" >Inventaire</MenuItem>
             
-            
-            
-         
-             
-         <SubMenu className=' sidebci'icon={<RiFileList2Fill size="2rem" />  }  label="BCI">
-               <MenuItem   className='white' href="/Bci"  >Liste de BCI</MenuItem>
-               <MenuItem  className='white' href="/Creerbci" >Etablir un BCI</MenuItem>
-              
-         </SubMenu>
-          
+        
           
          <MenuItem className=' sidebci' icon={ <img src={DASH}/>
 } href="#" >dashboard</MenuItem>

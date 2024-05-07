@@ -22,7 +22,7 @@ function Bnreception() {
             
    
         </div>
-        <h1 className='g111'>Bon de Réception</h1>
+        <h1 className='g111' style={{marginTop:'-20px'}}>Bon de Réception</h1>
 
 
 

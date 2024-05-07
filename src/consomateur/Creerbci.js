@@ -173,7 +173,7 @@ const [rows, setRows] = useState([
       <div className='partiebouton'>
         <div >
        
-            <button className='ajouter'>  <IoMdAdd size="1.5rem" onClick={() => history.push("/Addbciprod")}/>ajouter</button>
+            <button className='ajouter'>  <IoMdAdd size="2rem" onClick={() => history.push("/Addbciprod")}/>ajouter</button>
 
         </div>
         <div className='btngroup'>

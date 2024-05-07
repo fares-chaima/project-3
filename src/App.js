@@ -35,6 +35,7 @@ import Sidebnr from './asa/Sidebnr';
 import Sidebarbci from "./bci/Sidebarbci"
 import Creerbci from './bci/Creerbci';
 import Addbciprod from "./bci/Addbciprod";
+import Sidebarmag from "./magazinier/Sidebarmag"
 function App() {
 
   const onSelectRow = (selectedRow) => {
@@ -176,7 +177,7 @@ function App() {
         <Route exact path="/Bnreception">
         <MinNavBar  className=''/>
         <div className='align'>
-         <Sidebarbci/>
+         <Sidebarmag/>
         <Bnreception  />
        
         </div>
@@ -238,6 +239,19 @@ function App() {
        <div className='aligncreerbci'>
           <Sidebarbci/>
           <Addbciprod onSelectRow={onSelectRow}/>
+
+
+          </div>
+      
+       
+        </Route>
+
+        <Route exact path="/Sidebarmag">
+        <MinNavBar/>
+       
+       <div className='aligncreerbci'>
+          <Sidebarmag/>
+         
 
 
           </div>
