@@ -32,7 +32,6 @@ import ServiceAchat from './asa/ServiceAchat';
 import SideBar from './SideBar';
 import Bnreception from './Bnreception';
 import Sidebnr from './asa/Sidebnr';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebarbci from "./bci/Sidebarbci"
 import Creerbci from './bci/Creerbci';
 import Addbciprod from "./bci/Addbciprod";
@@ -177,7 +176,7 @@ function App() {
         <Route exact path="/Bnreception">
         <MinNavBar  className=''/>
         <div className='align'>
-        <Sidebnr/>
+         <Sidebarbci/>
         <Bnreception  />
        
         </div>

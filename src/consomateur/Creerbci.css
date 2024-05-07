@@ -17,10 +17,11 @@ height: 1000px;
 
 
 }
-.titrebci{
+.Creerbci .titrebci{
     font-size:40px;
     font-weight: bold;
-
+ 
+   
 
 
 }
@@ -63,7 +64,7 @@ height: 1000px;
 
 }
 .icnbci{
-    margin-top:7px;
+    margin-top:100px;
     margin-right:5px
 }
 

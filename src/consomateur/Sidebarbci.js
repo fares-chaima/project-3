@@ -40,7 +40,7 @@ const Sidebarbci = () => {
    
               <div className="prfl" >
                <img src={logo} alt="" />
-               <a className="titremagazinier" href="/Magazinier" style={{fontSize:'15px'}}>CONSOMATEUR</a>
+               <a className="titremagazinier" href="/Magazinier">MAGAZINIER</a>
                </div> 
              </MenuItem>
             

@@ -1,5 +1,5 @@
 .container{
-    width: 20px;
+    width: 800px;
     position: relative; /* Assurez-vous que l'élément a une position relative ou absolue */
     left: 300px;
 margin-top: 200px;
