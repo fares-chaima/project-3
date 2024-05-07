@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Creerbci.css'
 import { IoMdListBox } from "react-icons/io";
 import { MdOutlinePerson } from "react-icons/md";
@@ -9,63 +9,99 @@ import { useHistory } from 'react-router-dom';
 import { IoMdAdd } from "react-icons/io";
 
 function Creerbci() {
-    const history = useHistory();
-    const columns = [
-    
-        {
-          field: 'numerp',
-          headerName: 'N° de produit',
-          headerClassName: 'hdr',
-          flex: 1,
-        },
-        {
-          field: 'produit',
-          headerName: 'produit',
-          headerClassName: 'hdr',
-          flex: 1,
-          
-        },
-        
-        {
-            field: 'quantité demandé ',
-            headerName: 'quantité demandé',
-            headerClassName: 'hdr',
-            flex: 1,
-            
-          },
-          {
-            field: 'quantité accord"e',
-            headerName: 'quantité accordée',
-            headerClassName: 'hdr',
-            flex: 1,
-            renderCell: (cellValues) => {
-                const handleChange = (e) => {
-                  // Ajoutez ici la logique pour mettre à jour la valeur de la quantité
-                  console.log("Nouvelle valeur de quantité :", e.target.value);
-                };
-            
-                return (
-                  <div className="change">
-                    <input type="number" className="quantity-input" onChange={handleChange} />
-                  </div>
-                );
-              }
-            
-          },
-          
-        
-       
-       
-    
-      ];
-      const rows = [
-        { id: 1,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
+
+  
+const [rows, setRows] = useState([
+  { id: 1,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
         { id: 2,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
         { id: 3,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
         { id: 4,num:' N° 31', qtdemandée: '100',qtaccordée:'50' },
  
+]);
+
+const history = useHistory();
+
+
+
+
+
+const columns = [
+  { field: 'N°', headerName: 'numero produit', flex: 1 },
+  { field: 'produit', headerName: 'Produit', flex: 1 },
+  { field: 'quantiteDemandee', headerName: 'Quantité demandée', flex: 1, editable: true },
+  { 
+    field: 'selection', 
+    headerName: 'Sélection', 
+    flex: 1, align: 'center',
+    
+
+     
+
+  },
+ 
+];
+  // const [produits, setProduits] = useState([]);
+
+  // const onSelectRow = (selectedRow) => {
+  //   setProduits(prevProduits => [...prevProduits, selectedRow]);
+  // };
+  //   const history = useHistory();
+  //   const columns = [
+    
+  //       {
+  //         field: 'numerp',
+  //         headerName: 'N° de produit',
+  //         headerClassName: 'hdr',
+  //         flex: 1,
+  //       },
+  //       {
+  //         field: 'produit',
+  //         headerName: 'produit',
+  //         headerClassName: 'hdr',
+  //         flex: 1,
+          
+  //       },
         
-      ];
+  //       {
+  //           field: 'quantité demandé ',
+  //           headerName: 'quantité demandé',
+  //           headerClassName: 'hdr',
+  //           flex: 1,
+            
+  //         },
+  //         {
+  //           field: 'quantité accord"e',
+  //           headerName: 'quantité accordée',
+  //           headerClassName: 'hdr',
+  //           flex: 1,
+  //           renderCell: (cellValues) => {
+  //               const handleChange = (e) => {
+  //                 // Ajoutez ici la logique pour mettre à jour la valeur de la quantité
+  //                 console.log("Nouvelle valeur de quantité :", e.target.value);
+  //               };
+            
+  //               return (
+  //                 <div className="change">
+  //                   <input type="number" className="quantity-input" onChange={handleChange} />
+  //                 </div>
+  //               );
+  //             }
+            
+  //         },
+          
+        
+       
+       
+    
+  //     ];
+  //     const rows = [
+  //       { id: 1,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
+  //       { id: 2,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
+  //       { id: 3,num:'pro N° 31', qtdemandée: '100',qtaccordée:'50' },
+  //       { id: 4,num:' N° 31', qtdemandée: '100',qtaccordée:'50' },
+ 
+        
+  //     ];
   return (
     <div className='contcreerbci'>
 
@@ -150,33 +186,7 @@ function Creerbci() {
               
               <div style={{ height: 300, width: '100%' }}>
        
-        <DataGrid
-        sx={{
-          '.MuiDataGrid-columnSeparator': {
-            display: 'none',
-            
-          },
-          '&.MuiDataGrid-root': {
-            border: 'none',
-          },
-          
-         
-          
-        }}
-        slots={{ toolbar: GridToolbar }}
-    
-        className='grid'
-        style={{height: "66vh"}}
-          rows={rows}
-          columns={columns}    
-          rowHeight={70}
-          autoPageSize
-          
-         getRowClassName={(params) =>
-      params.indexRelativeToCurrentPage % 2 === 0 ? 'Mui-even' : 'Mui-odd'
-    }
        
-        />
      
       </div>
                   </div>
@@ -186,7 +196,7 @@ function Creerbci() {
       <div className='partiebouton'>
         <div >
        
-            <button className='ajouter'>  <IoMdAdd size="1.5rem"/>ajouter</button>
+            <button className='ajouter'>  <IoMdAdd size="1.5rem" onClick={() => history.push("/Addbciprod")}/>ajouter</button>
 
         </div>
         <div className='btngroup'>

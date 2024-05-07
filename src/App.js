@@ -35,7 +35,13 @@ import Sidebnr from './asa/Sidebnr';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebarbci from "./bci/Sidebarbci"
 import Creerbci from './bci/Creerbci';
+import Addbciprod from "./bci/Addbciprod";
 function App() {
+
+  const onSelectRow = (selectedRow) => {
+    console.log('Ligne sélectionnée :', selectedRow);
+    // Logique pour ajouter la ligne sélectionnée à une autre table
+  };
   return (
     <Router>
       
@@ -220,6 +226,19 @@ function App() {
        <div className='aligncreerbci'>
           <Sidebarbci/>
           <Creerbci/>
+
+
+          </div>
+      
+       
+        </Route>
+
+        <Route exact path="/Addbciprod">
+        <MinNavBar/>
+       
+       <div className='aligncreerbci'>
+          <Sidebarbci/>
+          <Addbciprod onSelectRow={onSelectRow}/>
 
 
           </div>
