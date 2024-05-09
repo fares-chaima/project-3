@@ -13,7 +13,7 @@ import "../css/Sidebnr.css";
 import { RiFileList2Fill } from "react-icons/ri";
 import { SiStatista } from "react-icons/si";
 
-
+import DASH from "../magazinier/imagesmaga/Assignment.png";
 const Sidebarbci = () => {
     const { collapseSidebar   } = useProSidebar();
     
@@ -40,7 +40,7 @@ const Sidebarbci = () => {
    
               <div className="prfl" >
                <img src={logo} alt="" />
-               <a className="titremagazinier" href="/Magazinier">MAGAZINIER</a>
+               <a className="titremagazinier" href="/Magazinier" style={{fontSize:'15px'}}>CONSOMATEUR</a>
                </div> 
              </MenuItem>
             
@@ -55,7 +55,7 @@ const Sidebarbci = () => {
          </SubMenu>
           
           
-         <MenuItem className=' sidebci' icon={<SiStatista size="1.5rem"  />
+         <MenuItem className=' sidebci' icon={ <img src={DASH}/>
 } href="#" >dashboard</MenuItem>
            </Menu>
           

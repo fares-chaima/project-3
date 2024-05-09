@@ -9,15 +9,6 @@ import { useHistory } from 'react-router-dom';
 import { IoMdAdd } from "react-icons/io";
 
 function Creerbci() {
-  const [direction, setDirection] = useState('');
-  const [demandeur, setDemandeur] = useState('');
-  const [produitsRestants, setProduitsRestants] = useState('');
-
-  const effacerChamps = () => {
-      setDirection('');
-      setDemandeur('');
-      setProduitsRestants('');
-  };
 
   
   
@@ -78,7 +69,7 @@ const [rows, setRows] = useState([
                     <div className='icnbci' >
                     <IoMdListBox size='2rem'/>
                     </div>
-                    <h3 className='titrebci'>Bon de commande interne</h3>
+                    <h3 className='titrebci' style={{paddingTop:'25px'}}>Bon de commande interne</h3>
       </div>
 
       <div className='partiesec'>
@@ -88,47 +79,52 @@ const [rows, setRows] = useState([
                                             <MdOutlinePerson size = '2rem' />
 
                                             </div>
-                                            <h3 className='titredemandeur'>Information de demandeur</h3>
+                                            <h3 className='titredemandeur' style={{paddingTop:'20px'}} >Information de demandeur</h3>
                          </div>
                          <div >
-                         <form className='partieform'>
-            <div className='partiedircetion'>
-                <label className='labeldirection' htmlFor="directionInput">Direction</label>
-                <input
-                    className='inputdirection'
-                    type="text"
-                    id="directionInput"
-                    value={direction}
-                    onChange={(e) => setDirection(e.target.value)}
-                    placeholder='Secrétariat générale'
-                />
-            </div>
-            <div className='partiedemandeur'>
-                <label className='labeldemandeur' htmlFor="demandeurInput">Le demandeur</label>
-                <input
-                    className='inputdemandeur'
-                    type="text"
-                    id="demandeurInput"
-                    value={demandeur}
-                    onChange={(e) => setDemandeur(e.target.value)}
-                    placeholder='Comité des œuvres sociales'
-                />
-            </div>
-            <div className='partierestant'>
-                <label className='labelrestant' htmlFor="selectList">Les produits restent au niveau de l'école</label>
-                <select
-                    className='inputrestant'
-                    id="selectList"
-                    value={produitsRestants}
-                    onChange={(e) => setProduitsRestants(e.target.value)}
-                >
-                    <option value=""></option>
-                    <option value="oui">Oui</option>
-                    <option value="non">Non</option>
-                </select>
-            </div>
-            <button type="button" onClick={effacerChamps}>Annuler</button>
-        </form>
+                            <form className='partieform'>
+                            <div className='partiedircetion'>
+                                <label className='labeldirection' htmlFor="textInput">Direction</label>
+                            
+                                <input className='inputdirection'
+                                    type="text"
+                                    id="textInput"
+                                    value=''
+                                    onChange=''
+                                    placeholder='secretriat generale'
+                                />
+                                        
+                                
+      
+                            </div>
+                            <div className='partiedemandeur'>
+                            <label className='labeldemandeur' htmlFor="textInput">Le demandeur</label>
+                            
+                            <input className='inputdemandeur'
+                                type="text"
+                                id="textInput"
+                                value=''
+                                onChange=''
+                                placeholder='Comite des ouevre sociales'
+                            />
+      
+                            </div>
+                            <div className='partierestant'>
+                            <label  className='labelrestant' htmlFor="textInput">Les produits reste à l'école</label>
+                            <select className='inputrestant'
+        id="selectList"
+       
+>
+  <option value=""></option>
+  <option value="oui">Oui</option>
+  <option value="non">Non</option>
+</select>
+      
+                            </div>
+
+
+
+                            </form>
       
                          </div>
 
@@ -172,13 +168,14 @@ const [rows, setRows] = useState([
                         </div>
       <div className='partiebouton'>
         <div >
+          {/*  <IoMdAdd size="1rem" style={{paddingTop:"20px"}} /> */}
        
-            <button className='ajouter'>  <IoMdAdd size="2rem" onClick={() => history.push("/Addbciprod")}/>ajouter</button>
+            <button className='ajouter'onClick={() => history.push("/Addbciprod")}> ajouter</button>
 
         </div>
         <div className='btngroup'>
     
-        <button className='annuler' >annuler</button>
+        <button className='annuler'>annuler</button>
         <button className='confirmer'>confirmer</button>
             
             </div>

@@ -10,6 +10,7 @@ import './Bci.css'
 import SideBar from '../SideBar';
 
 
+
 function Bci() {
   const [rows, setRows] = useState([
     { id: 1, num: 'Commande N° 31', date: '20-04-2023', etat: 'Pret' },
@@ -52,7 +53,7 @@ function Bci() {
       headerName: 'État',
       flex: 1,
       renderCell: (params) => (
-        <input type="text" value={params.row.etat} style={{ backgroundColor: params.row.etat === 'Pret' ? 'green' : 'red',borderRadius: '30px', width: '100px',textAlign:'center',color:'white',height:'38px' }} disabled />
+        <input type="text" value={params.row.etat} style={{ backgroundColor: params.row.etat === 'Pret' ? '#7CD992' : '#EB6060',borderRadius: '30px', width: '100px',textAlign:'center',color:'black',height:'30px' }} disabled />
       ),
     },
     {
@@ -85,7 +86,7 @@ function Bci() {
         <div className='groupe1'>
           <h1 className='listedebci'>Liste de BCI</h1>
           <button className='btnajouter' onClick={() => history.push("/Creerbci")}>
-            <div></div>
+          <div> </div>
             Ajouter
           </button>
         </div>

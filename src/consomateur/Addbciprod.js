@@ -36,9 +36,9 @@ const [rows, setRows] = useState([
            color:'white',
           fontSize:'15px',
          height:'38px',
-          width:'120px',
+          width:'1000px',
           marginRight: '70px',
-          
+          backgroundColor:'black'
 
         }}>Sélectionner  </button> // Remplacez par le code de votre bouton
     ),

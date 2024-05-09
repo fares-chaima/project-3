@@ -6,12 +6,15 @@ import PrintIcon from '@mui/icons-material/Print';
 import SendIcon from '@mui/icons-material/Send';
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useHistory } from 'react-router-dom';
-import './Bci.css'
+import '../consomateur/Bci.css'
 import SideBar from '../SideBar';
+import { FaCheck } from "react-icons/fa6";
 
 
 
-function Bci() {
+function Listebcimaga() {
+
+    
   const [rows, setRows] = useState([
     { id: 1, num: 'Commande N° 31', date: '20-04-2023', etat: 'Pret' },
     { id: 2, num: 'Commande N° 32', date: '20-04-2023', etat: 'Pret' },
@@ -36,10 +39,6 @@ function Bci() {
     }));
   };
 
-  const handleSupprimer = (id) => {
-    setRows(rows.filter((row) => row.id !== id));
-  };
-
   const handleModifier = (id) => {
     // Vous pouvez rediriger vers une nouvelle page avec les détails de la commande ici
     history.push(`/details-commande/${id}`);
@@ -62,9 +61,9 @@ function Bci() {
       flex: 1,
       renderCell: (params) => (
         <div>
-          <DeleteIcon fontSize="small" className='send2' onClick={() => handleSupprimer(params.row.id)} />
+        
           <EditIcon fontSize="small" className='send1 supprimer' onClick={() => handleModifier(params.row.id)} />
-          <PrintIcon fontSize="small" className='send1' />
+          <PrintIcon fontSize="small" className='send1'  />
         </div>
       ),
     },
@@ -74,7 +73,8 @@ function Bci() {
       flex: 1,
       renderCell: (params) => (
         <div>
-          <SendIcon onClick={() => handleEnvoyerClick(params.row.id)} fontSize="small" className='send'/>
+            <FaCheck  onClick={() => handleEnvoyerClick(params.row.id)} fontSize="small" className='send' style={{ color: params.row.etat === 'Pret' ? '#7CD992' : '#EB6060',textAlign:'center',fontSize:'30px' }}   />
+
         </div>
       ),
     },
@@ -116,4 +116,4 @@ function Bci() {
   );
 }
 
-export default Bci;
+export default Listebcimaga;

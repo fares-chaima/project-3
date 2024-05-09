@@ -35,7 +35,16 @@ import Sidebnr from './asa/Sidebnr';
 import Sidebarbci from "./bci/Sidebarbci"
 import Creerbci from './bci/Creerbci';
 import Addbciprod from "./bci/Addbciprod";
-import Sidebarmag from "./magazinier/Sidebarmag"
+import Sidebarmag from "./magazinier/Sidebarmag";
+import Listebcimaga from './magazinier/Listebcimaga';
+import Editbcimaga from './magazinier/Editbcimaga';
+import Listbs from './magazinier/Listbs';
+import Editbs from './magazinier/Editbs';
+import Consulterbs from './magazinier/Consulterbs';
+import Consulterbd from './magazinier/Consulterbd'
+import Listbd from './magazinier/Listbd';
+import Editbd from './magazinier/Editbd';
+import Listbce from './magazinier/Listbce'
 function App() {
 
   const onSelectRow = (selectedRow) => {
@@ -259,11 +268,113 @@ function App() {
        
         </Route>
 
+
+          
+        <Route exact path="/Listebcimaga">
+          <MinNavBar/>
+          <div className='alignbci'>
+          <Sidebarmag/>
+          <Listebcimaga/>
+          
+
+
+          </div>
+      
+       
+        </Route>
+
+
+        
+        <Route exact path="/Editbcimaga">
+        <MinNavBar/>
+       
+       <div className='aligncreerbci'>
+          <Sidebarbci/>
+          <Editbcimaga/>
+          </div>
+        </Route>
+
+
+        <Route exact path="/Listbs">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Listbs/>
+       
+
+          </div>
+      
+       
+        </Route>
+
+
+
+        <Route exact path="/Editbs">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Editbs/>
+       
+
+          </div>
+      
+       
+        </Route>
+
+
+        <Route exact path="/Consulterbs">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Consulterbs/>
+          </div>
+        </Route>
+
         
 
 
+        <Route exact path="/Listbd">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Listbd/>
+          </div>
+        </Route>
+
 
         
+
+        <Route exact path="/Editbd">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Editbd/>
+          </div>
+        </Route>
+
+
+        <Route exact path="/Consulterbd">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Consulterbd/>
+       
+
+          </div>
+      
+       
+        </Route>
+        <Route exact path="/Listbce">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Listbce/>
+       
+
+          </div>
+      
+       
+        </Route>
 
 
 

@@ -62,9 +62,9 @@ const Sidebarbci = () => {
 <MenuItem className=' sidebci' icon= {<img src={Assignment}/>
 } href="/Bci"  >Liste des BCI</MenuItem>
 <MenuItem className=' sidebci' icon={<img src={receiptlong}/>
-} href="#" >Lise des BS</MenuItem>
+} href="/listbs" >Liste des BS</MenuItem>
 <MenuItem className=' sidebci' icon={<img src={vector}/>
-} href="#" >Lise des BD</MenuItem>
+} href="/listbd" >Liste des BD</MenuItem>
 <MenuItem className=' sidebci' icon={<img src={group}/>
 } href="#" >Inventaire</MenuItem>
             

@@ -110,7 +110,7 @@ const [rows, setRows] = useState([
       
                             </div>
                             <div className='partierestant'>
-                            <label  className='labelrestant' htmlFor="textInput">Les produits reste au niveau de l'école</label>
+                            <label  className='labelrestant' htmlFor="textInput">Les produits reste à  l'école</label>
                             <select className='inputrestant'
         id="selectList"
        
@@ -168,8 +168,9 @@ const [rows, setRows] = useState([
                         </div>
       <div className='partiebouton'>
         <div >
+          {/*  <IoMdAdd size="1rem" style={{paddingTop:"20px"}} /> */}
        
-            <button className='ajouter'>  <IoMdAdd size="1.5rem" onClick={() => history.push("/Addbciprod")}/>ajouter</button>
+            <button className='ajouter'onClick={() => history.push("/Addbciprod")}> ajouter</button>
 
         </div>
         <div className='btngroup'>
