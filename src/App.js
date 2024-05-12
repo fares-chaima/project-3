@@ -45,6 +45,8 @@ import Consulterbd from './magazinier/Consulterbd'
 import Listbd from './magazinier/Listbd';
 import Editbd from './magazinier/Editbd';
 import Listbce from './magazinier/Listbce'
+import Listbnrecep from './magazinier/Listbnrecep';
+import Imprimerbnrecep from './magazinier/Imprimerbnrecep';
 function App() {
 
   const onSelectRow = (selectedRow) => {
@@ -175,12 +177,8 @@ function App() {
         <AddBce />
        </Route>
 
-       <Route exact path="/Sidebarbci">
-     
-    
+       <Route exact path="/Sidebarbci">   
         <Sidebarbci/>
-        
-       
         </Route>
 
         <Route exact path="/Bnreception">
@@ -188,7 +186,6 @@ function App() {
         <div className='align'>
          <Sidebarmag/>
         <Bnreception  />
-       
         </div>
         
        
@@ -211,8 +208,7 @@ function App() {
         <Sidebnr/>
        
         </div>
-        
-       
+              
         </Route>
 
       
@@ -222,89 +218,58 @@ function App() {
           <div className='alignbci'>
           <Sidebarbci/>
            <Bci/>
-
-
-          </div>
-      
-       
+         </div>             
         </Route>
 
         <Route exact path="/Creerbci">
-        <MinNavBar/>
-       
+        <MinNavBar/>       
        <div className='aligncreerbci'>
           <Sidebarbci/>
           <Creerbci/>
-
-
-          </div>
-      
-       
+          </div>            
         </Route>
 
         <Route exact path="/Addbciprod">
-        <MinNavBar/>
-       
+        <MinNavBar/>   
        <div className='aligncreerbci'>
           <Sidebarbci/>
           <Addbciprod onSelectRow={onSelectRow}/>
-
-
-          </div>
-      
-       
+          </div>             
         </Route>
 
         <Route exact path="/Sidebarmag">
         <MinNavBar/>
        
        <div className='aligncreerbci'>
-          <Sidebarmag/>
-         
-
-
-          </div>
-      
-       
+          <Sidebarmag/>        
+          </div>            
         </Route>
-
 
           
         <Route exact path="/Listebcimaga">
           <MinNavBar/>
           <div className='alignbci'>
           <Sidebarmag/>
-          <Listebcimaga/>
-          
-
-
-          </div>
-      
-       
+          <Listebcimaga/>          
+          </div>             
         </Route>
 
 
         
         <Route exact path="/Editbcimaga">
-        <MinNavBar/>
-       
+        <MinNavBar/>       
        <div className='aligncreerbci'>
           <Sidebarbci/>
           <Editbcimaga/>
           </div>
         </Route>
 
-
         <Route exact path="/Listbs">
         <MinNavBar/>
        <div className='aligncreerbci'>
        <Sidebarmag/>
-          <Listbs/>
-       
-
-          </div>
-      
-       
+          <Listbs/>       
+          </div>             
         </Route>
 
 
@@ -313,14 +278,9 @@ function App() {
         <MinNavBar/>
        <div className='aligncreerbci'>
        <Sidebarmag/>
-          <Editbs/>
-       
-
-          </div>
-      
-       
+          <Editbs/>       
+          </div>       
         </Route>
-
 
         <Route exact path="/Consulterbs">
         <MinNavBar/>
@@ -330,9 +290,6 @@ function App() {
           </div>
         </Route>
 
-        
-
-
         <Route exact path="/Listbd">
         <MinNavBar/>
        <div className='aligncreerbci'>
@@ -340,9 +297,6 @@ function App() {
           <Listbd/>
           </div>
         </Route>
-
-
-        
 
         <Route exact path="/Editbd">
         <MinNavBar/>
@@ -358,25 +312,33 @@ function App() {
        <div className='aligncreerbci'>
        <Sidebarmag/>
           <Consulterbd/>
-       
-
           </div>
-      
-       
         </Route>
+
         <Route exact path="/Listbce">
         <MinNavBar/>
        <div className='aligncreerbci'>
        <Sidebarmag/>
           <Listbce/>
-       
-
           </div>
-      
-       
+        </Route>
+
+        <Route exact path="/Listbnrecep">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Listbnrecep/>
+          </div>
         </Route>
 
 
+        <Route exact path="/Imprimerbnrecep">
+     
+       <div className='aligncreerbci'>
+     
+          <Imprimerbnrecep/>
+          </div>
+        </Route>
 
 
        

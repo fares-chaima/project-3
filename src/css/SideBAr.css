@@ -74,3 +74,8 @@ img{
 .css-atxc5o{
     background-color: #00837D;
 }
+@media (max-width: 1237px) {
+    /* Styles CSS pour les écrans dans cet intervalle */
+    
+    nav{background-color: black;}
+  }
