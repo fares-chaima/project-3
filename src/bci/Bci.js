@@ -1,59 +1,125 @@
-import React,{useState} from 'react'
-import MinNavBar from '../MinNavBar'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import PrintIcon from '@mui/icons-material/Print';
 import SendIcon from '@mui/icons-material/Send';
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './Bci.css'
-import SideBar from '../SideBar';
+import EtatCell from './EtatCell'; // Assurez-vous de spécifier le chemin correct
 
-
+import './Bci.css';
 
 function Bci() {
-  const [rows, setRows] = useState([
-    { id: 1, num: 'Commande N° 31', date: '20-04-2023', etat: 'Pret' },
-    { id: 2, num: 'Commande N° 32', date: '20-04-2023', etat: 'Pret' },
-    { id: 3, num: 'Commande N° 33', date: '20-04-2023', etat: 'Pret' },
-    { id: 4, num: 'Commande N° 34', date: '20-04-2023', etat: 'Pret' },
-    { id: 5, num: 'Commande N° 35', date: '20-04-2023', etat: 'Pret' },
-    { id: 6, num: 'Commande N° 36', date: '20-04-2023', etat: 'Pret' },
-    { id: 7, num: 'Commande N° 37', date: '20-04-2023', etat: 'Pret' },
-    { id: 8, num: 'Commande N° 338', date: '20-04-2023', etat: 'Pret' },
-    { id: 9, num: 'Commande N° 39', date: '20-04-2023', etat: 'Pret' },
-    { id: 10, num: 'Commande N° 34', date: '20-04-2023', etat: 'Pret' },
-  ]);
-
+  const [rows, setRows] = useState([]);
   const history = useHistory();
+  const [etatInfo, setEtatInfo] = useState({ text: '', color: '' });
 
-  const handleEnvoyerClick = (id) => {
-    setRows(rows.map((row) => {
-      if (row.id === id) {
-        return { ...row, etat: 'Envoyée' };
+  const handleIconClick = async (id) => {
+    try {
+      const response = await fetch('http://localhost:3001/api/bci/store', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: id
+        
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-      return row;
-    }));
-  };
 
-  const handleSupprimer = (id) => {
-    setRows(rows.filter((row) => row.id !== id));
+      const data = await response.json();
+      console.log('BCI info stored:', data);
+    } catch (error) {
+      console.error('Error storing BCI info:', error);
+    }
   };
+  const fetchEtatInfo = async (rowId) => {
+    try {
+        const response = await fetch(`/api/bci/${rowId}/etat`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching etat:', error);
+        return { text: '', color: '' }; // Retourne une valeur par défaut en cas d'erreur
+    }
+};
+
+
+
+  // Utiliser useEffect pour récupérer les données de l'API
+  useEffect(() => {
+    fetch('http://localhost:3001/getBciData')
+      .then(response => response.json())
+      .then(data => {
+        // Mettre à jour les données
+        console.log(data);
+        const formattedData = data.map(item => ({
+          id: item.id,
+          num: ` N° ${item.id}`,
+          date: new Date(item.date_insertion).toLocaleDateString(), 
+          etat: 'Pret'
+        }));
+        setRows(formattedData);
+      })
+      .catch(error => console.error('Erreur lors de la récupération des données :', error));
+  }, []);
+
+  const handleEnvoyerClick = async (id) => {
+    try {
+        const response = await fetch('http://localhost:3001/api/rds', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id})
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+      }
+
+      const data = await response.json();
+      console.log('Record added:', data);
+  } catch (error) {
+      console.error('Error adding record:', error);
+  }
+};
+
+  const handleSupprimer = (id) => {fetch(`http://localhost:3001/deletebci/${id}`, {
+    method: 'DELETE',
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to delete BCI entry');
+    }
+    // Mettre à jour les données après la suppression réussie
+    setRows(rows.filter(row => row.id !== id));
+  })
+  .catch(error => console.error('Erreur lors de la suppression de l\'entrée BCI :', error));
+};
 
   const handleModifier = (id) => {
-    // Vous pouvez rediriger vers une nouvelle page avec les détails de la commande ici
-    history.push(`/details-commande/${id}`);
+    history.push(`/details/${id}`);
   };
 
   const columns = [
-    { field: 'num', headerName: 'N° DE BCE', flex: 1 },
+    { field: 'num',headerName: 'N° DE BCE', flex: 1 },
     { field: 'date', headerName: 'Date', flex: 1 },
+    
+   
+   
     {
       field: 'etat',
       headerName: 'État',
       flex: 1,
       renderCell: (params) => (
-        <input type="text" value={params.row.etat} style={{ backgroundColor: params.row.etat === 'Pret' ? '#7CD992' : '#EB6060',borderRadius: '30px', width: '100px',textAlign:'center',color:'black',height:'30px' }} disabled />
+        <EtatCell row={params.row} />
       ),
     },
     {
@@ -64,7 +130,7 @@ function Bci() {
         <div>
           <DeleteIcon fontSize="small" className='send2' onClick={() => handleSupprimer(params.row.id)} />
           <EditIcon fontSize="small" className='send1 supprimer' onClick={() => handleModifier(params.row.id)} />
-          <PrintIcon fontSize="small" className='send1' />
+          <PrintIcon fontSize="small" className='send1' onClick={() => handleIconClick(params.row.id)} />
         </div>
       ),
     },
@@ -74,7 +140,7 @@ function Bci() {
       flex: 1,
       renderCell: (params) => (
         <div>
-          <SendIcon onClick={() => handleEnvoyerClick(params.row.id)} fontSize="small" className='send'/>
+          <SendIcon onClick={() => handleEnvoyerClick(params.row.id)} fontSize="small" className='send' />
         </div>
       ),
     },
@@ -86,7 +152,6 @@ function Bci() {
         <div className='groupe1'>
           <h1 className='listedebci'>Liste de BCI</h1>
           <button className='btnajouter' onClick={() => history.push("/Creerbci")}>
-          <div> </div>
             Ajouter
           </button>
         </div>
@@ -101,7 +166,7 @@ function Bci() {
                 }}
                 slots={{ toolbar: GridToolbar }}
                 className='grid'
-                style={{height: "66vh"}}
+                style={{ height: "66vh" }}
                 rows={rows}
                 columns={columns}
                 rowHeight={70}

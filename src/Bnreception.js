@@ -1,18 +1,84 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './Bnreception.css'
 import { FaList } from "react-icons/fa";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { FaPerson } from "react-icons/fa6";
 function Bnreception() {
-    const data = [
-        { numeroProduit: 'souris', designation: '1', quantiteDemandee: '30', quantiteAccordee: '20', gerer: 'vide' },
-        { numeroProduit: 'souris', designation: 'bic-196', quantiteDemandee: '50', quantiteAccordee: '0', gerer: '20000' },
-        { numeroProduit: 'sécurité', designation: 'sécurité', quantiteDemandee: '2', quantiteAccordee: 'bic-196', gerer: '20000' },
-        { numeroProduit: 'souris', designation: '1', quantiteDemandee: '30', quantiteAccordee: '20', gerer: 'vide' },
-        { numeroProduit: 'souris', designation: 'bic-196', quantiteDemandee: '50', quantiteAccordee: '0', gerer: '20000' },
-        { numeroProduit: 'sécurité', designation: 'sécurité', quantiteDemandee: '2', quantiteAccordee: 'bic-196', gerer: '20000' }
-        // Ajoutez d'autres lignes de données ici
-      ];
+  const [data, setData] = useState([]);
+  const [fournisseur, setFournisseur] = useState();
+  const [numero, setNumero] = useState(null);
+  const [quantite, setQuantite] = useState();
+  useEffect(() => {
+ 
+    const fetchData = () => {
+      fetch('http://localhost:3001/fares')
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Failed to fetch data from /fares');
+              }
+              return response.json();
+          })
+          .then(data => {
+              // Handle the received data here
+              console.log('Received data from /fares', data);
+              // Update state or perform any other actions with the received data
+              setFournisseur(data.fournisseur);
+          })
+          .catch(error => {
+              console.error('Error fetching data from /fares', error);
+              // Handle the error appropriately
+          });
+  };
+  
+  // Call fetchData to fetch the fournisseur
+  fetchData();
+  
+
+ 
+}, []); // Ensure this effect runs only once on component mount
+
+
+  useEffect(() => {
+      // Call fetchData with the desired ID
+     
+ 
+  
+  
+  
+      fetch('http://localhost:3001/lire-table')
+          .then(response => response.json())
+          .then(data => setData(data))
+          .catch(error => console.error('Error fetching data:', error));
+  }, []);
+  const handleQuantiteChange = (event) => {
+    setQuantite(event.target.value);
+};
+const handleFormSubmit = (event, productId) => {
+  event.preventDefault();
+
+
+
+
+  fetch('http://localhost:3001/update-quantite', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ quantite,productId }),
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Erreur lors de la mise à jour de la quantité');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log('Quantité mise à jour avec succès:', data);
+  })
+  .catch(error => {
+      console.error('Erreur lors de la mise à jour de la quantité:', error);
+  });
+};
   return (
     <div>
        <div class="container">
@@ -22,7 +88,7 @@ function Bnreception() {
             
    
         </div>
-        <h1 className='g111' style={{marginTop:'-20px'}}>Bon de Réception</h1>
+        <h1 className='g111'>Bon de Réception</h1>
 
 
 
@@ -35,19 +101,16 @@ function Bnreception() {
             <FaPerson size='2rem'/>
             
              </div>
-             <label className='supplier' for="supplier">Veuillez saisir le nom du fournisseur:</label>
+             <label className='supplier' for="supplier"> Le nom du fournisseur:</label>
    
         </div>
-        <input className='g222'list="supplier" id="sup" name="verification_responsable"  />
-            <datalist id="supplier">
-            <option value="f1"/>
-            <option value="f2"/>
-            <option value="f3"/>
-            <option value="f4"/>
-            </datalist>
-          
-           
-             
+        <input 
+    value={fournisseur || 'hi'} 
+    onChange={(e) => setFournisseur(e.target.value)} 
+    className='g222' 
+    id="sup" 
+    name="verification_responsable" 
+/>
           
             
             
@@ -69,9 +132,10 @@ function Bnreception() {
 
         <table id="productTable">
   <thead>
+
     <tr>
       <th className='first-row'>N° produit</th>
-      <th className='first-row'>Désignation</th>
+      <th className='first-row'>Nom de produit</th>
       <th className='first-row'>Quantité demandée</th>
       <th className='first-row'>Quantité reçue</th>
       <th className='first-row'>Quantité livrée</th>
@@ -80,17 +144,22 @@ function Bnreception() {
   <tbody>
                 {data.map((item, index) => (
                     <tr key={index}  className="table-row">
-                        <td>{item.numeroProduit}</td>
-                        <td>{item.designation}</td>
-                        <td>{item.quantiteDemandee}</td>
-                        <td>{item.quantiteAccordee}</td>
+                      
+                        <td>{item.id}</td>
+                        <td>{item.produit}</td>
+                        <td>{item.quantite}</td>
+                        <td>{item.accor}</td>
                         <td className='reduire' style={{ display: 'flex', gap: '5px' }}> 
-                       
-                        <input  className='reduireinp'  type="number" value="0" min="0"/>
-
+                        <form onSubmit={(event) => handleFormSubmit(event, item.id)}>
+                        <input name='quantite' onChange={handleQuantiteChange}  value={quantite}   className='reduireinp' type="number"  />
+                     
+                       <div>       <button type='submit' className='m' disabled={item.quantite === item.accor}>Confirmer</button>
+                       </div> </form>
                         </td>
-                    </tr>
-                ))}
+
+                    </tr> 
+                    
+                ) )}
             </tbody>
 </table>
 

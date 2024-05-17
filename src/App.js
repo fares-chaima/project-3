@@ -1,7 +1,4 @@
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
-import MinNavBar from "./MinNavBar";
-import Bci from "./bci/Bci"
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import Accueil from './Accueil';
 import AddCmpt from './AddCmpt';
@@ -9,9 +6,12 @@ import AddFourn from './AddFourn';
 import AddStructure from './AddStructure';
 import Admin from './Admin';
 import AfficherComptes from './AfficherComptes';
+import './App.css';
+import Bnreception from './Bnreception';
 import CodeConf from './CodeConf';
 import Contact from './Contact';
 import Fournisseurs from './Fournisseur';
+import MinNavBar from "./MinNavBar";
 import ModifProfile from './ModifProfile';
 import NavBar from './NavBar';
 import NewPwd from './NewPwd';
@@ -29,24 +29,24 @@ import MinNavBarAsa from './asa/MinNavBarAsa';
 import ModifAsa from './asa/ModifAsa';
 import Produits from './asa/Produits';
 import ServiceAchat from './asa/ServiceAchat';
-import SideBar from './SideBar';
-import Bnreception from './Bnreception';
 import Sidebnr from './asa/Sidebnr';
-import Sidebarbci from "./bci/Sidebarbci"
-import Creerbci from './bci/Creerbci';
 import Addbciprod from "./bci/Addbciprod";
-import Sidebarmag from "./magazinier/Sidebarmag";
-import Listebcimaga from './magazinier/Listebcimaga';
-import Editbcimaga from './magazinier/Editbcimaga';
-import Listbs from './magazinier/Listbs';
-import Editbs from './magazinier/Editbs';
+import Bci from "./bci/Bci";
+import Creerbci from './bci/Creerbci';
+import Details from './bci/Details.js';
+import Sidebarbci from "./bci/Sidebarbci";
+import Consulterbd from './magazinier/Consulterbd';
 import Consulterbs from './magazinier/Consulterbs';
-import Consulterbd from './magazinier/Consulterbd'
-import Listbd from './magazinier/Listbd';
+import Editbcimaga from './magazinier/Editbcimaga';
 import Editbd from './magazinier/Editbd';
-import Listbce from './magazinier/Listbce'
-import Listbnrecep from './magazinier/Listbnrecep';
+import Editbs from './magazinier/Editbs';
 import Imprimerbnrecep from './magazinier/Imprimerbnrecep';
+import Listbce from './magazinier/Listbce';
+import Listbd from './magazinier/Listbd';
+import Listbnrecep from './magazinier/Listbnrecep';
+import Listbs from './magazinier/Listbs';
+import Listebcimaga from './magazinier/Listebcimaga';
+import Sidebarmag from "./magazinier/Sidebarmag";
 function App() {
 
   const onSelectRow = (selectedRow) => {
@@ -181,7 +181,7 @@ function App() {
         <Sidebarbci/>
         </Route>
 
-        <Route exact path="/Bnreception">
+        <Route exact path="/Bnreception/:id">
         <MinNavBar  className=''/>
         <div className='align'>
          <Sidebarmag/>
@@ -274,7 +274,7 @@ function App() {
 
 
 
-        <Route exact path="/Editbs">
+        <Route exact path="/Editbs/:id">
         <MinNavBar/>
        <div className='aligncreerbci'>
        <Sidebarmag/>
@@ -298,7 +298,7 @@ function App() {
           </div>
         </Route>
 
-        <Route exact path="/Editbd">
+        <Route exact path="/Editbd/:id">
         <MinNavBar/>
        <div className='aligncreerbci'>
        <Sidebarmag/>
@@ -330,7 +330,13 @@ function App() {
           <Listbnrecep/>
           </div>
         </Route>
-
+        <Route exact path="/details/:id">
+        <MinNavBar/>
+       <div className='aligncreerbci'>
+       <Sidebarmag/>
+          <Details/>
+          </div>
+        </Route>
 
         <Route exact path="/Imprimerbnrecep">
      

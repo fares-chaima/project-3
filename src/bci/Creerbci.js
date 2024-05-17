@@ -8,58 +8,75 @@ import { useHistory } from 'react-router-dom';
 
 import { IoMdAdd } from "react-icons/io";
 
-function Creerbci() {
 
-  
-  
-const [rows, setRows] = useState([
-    { id: 1, produit: 'Produit A', quantiteDemandee: 10, quantiteaccordée: 50},
+function Creerbci() {
+  const [rows, setRows] = useState([
+    { id: 1, produit: 'Produit A', quantiteDemandee: 10, quantiteaccordée: 50 },
     { id: 2, produit: 'Produit A', quantiteDemandee: 10, quantiteaccordée: 50 },
     { id: 3, produit: 'Produit A', quantiteDemandee: 10, quantiteaccordée: 50 },
     { id: 4, produit: 'Produit A', quantiteDemandee: 10, quantiteaccordée: 50 },
-   
   ]);
 
+  const [direction, setDirection] = useState('');
+  const [demendeur, setDemendeur] = useState('');
+  const [reste, setReste] = useState('');
+
   const history = useHistory();
-
- 
-
- 
+  const handleAjouteClick = () => {
+    // Make a POST request to the initializeLastIdTable endpoint
+    fetch('http://localhost:3001/initializeLastIdTable', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    history.push("/Addbciprod");
+    
+  };
+  
+  const handleAjouterClick = () => {
+    fetch('http://localhost:3001/addbci', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ direction, demendeur, reste }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to add BCI entry');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        // Update your state or perform any necessary actions after successfully adding the BCI entry
+      })
+      .catch((error) => {
+        console.error('Error adding BCI entry:', error);
+        // Handle error
+      });
+  };
 
   const columns = [
     { field: 'id', headerName: 'id', flex: 1 },
     { field: 'produit', headerName: 'Produit', flex: 1 },
     { field: 'quantiteDemandee', headerName: 'Quantité demandée', flex: 1, editable: true },
-    { 
-      field: 'quantiteaccordée', 
-      headerName: 'quantitée accordée', 
-      flex: 1, align: 'center',
-      
+    {
+      field: 'quantiteaccordée',
+      headerName: 'quantitée accordée',
+      flex: 1,
+      align: 'center',
       editable: true,
-      cellRenderer: 'agAnimateShowChangeCellRenderer', // Optionnel, cela ajoute une animation pour montrer les changements de valeur
+      cellRenderer: 'agAnimateShowChangeCellRenderer',
       cellRendererParams: {
-        // Définir l'éditeur de cellule comme un champ d'entrée numérique avec une valeur minimale de 0
         cellRenderer: 'agNumericCellEditor',
         cellRendererParams: {
-          min: 0 // Valeur minimale de 0
+          min: 0
         }
       }
-     
-  
-       
-
     },
-
-    
-   
   ];
-
-
-
-
-
-
-
 
 
   return (
@@ -89,8 +106,9 @@ const [rows, setRows] = useState([
                                 <input className='inputdirection'
                                     type="text"
                                     id="textInput"
-                                    value=''
-                                    onChange=''
+                                    value={direction}
+                                    onChange={(e) => setDirection(e.target.value)}
+                                   
                                     placeholder='secretriat generale'
                                 />
                                         
@@ -103,8 +121,8 @@ const [rows, setRows] = useState([
                             <input className='inputdemandeur'
                                 type="text"
                                 id="textInput"
-                                value=''
-                                onChange=''
+                                value={demendeur}
+                                onChange={(e) => setDemendeur(e.target.value)}
                                 placeholder='Comite des ouevre sociales'
                             />
       
@@ -112,12 +130,13 @@ const [rows, setRows] = useState([
                             <div className='partierestant'>
                             <label  className='labelrestant' htmlFor="textInput">Les produits reste à  l'école</label>
                             <select className='inputrestant'
-        id="selectList"
+        id="selectList"  value={reste}
+        onChange={(e) => setReste(e.target.value)}
        
 >
   <option value=""></option>
-  <option value="oui">Oui</option>
-  <option value="non">Non</option>
+  <option value="1">Oui</option>
+  <option value="0">Non</option>
 </select>
       
                             </div>
@@ -170,13 +189,13 @@ const [rows, setRows] = useState([
         <div >
           {/*  <IoMdAdd size="1rem" style={{paddingTop:"20px"}} /> */}
        
-            <button className='ajouter'onClick={() => history.push("/Addbciprod")}> ajouter</button>
+          <button className='ajouter' onClick={handleAjouteClick}>Ajouter</button>
 
         </div>
         <div className='btngroup'>
     
         <button className='annuler'>annuler</button>
-        <button className='confirmer'>confirmer</button>
+        <button className='confirmer' onClick={handleAjouterClick}>Confirmer</button>
             
             </div>
       

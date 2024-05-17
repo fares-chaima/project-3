@@ -1,34 +1,32 @@
 
-import React,{useState} from 'react'
-import MinNavBar from '../MinNavBar'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import PrintIcon from '@mui/icons-material/Print';
-import SendIcon from '@mui/icons-material/Send';
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import React, { useEffect, useState } from 'react';
+import { LuEye } from "react-icons/lu";
 import { useHistory } from 'react-router-dom';
 import '../consomateur/Bci.css';
 import './Listbs.css';
-import { LuEye } from "react-icons/lu";
 
 
 function Listbs() {
-    const [rows, setRows] = useState([
-      { id: 1, num: 'sortie N° 31', date: '20-04-2023' },
-      { id: 2, num: 'sortie N° 32', date: '20-04-2023' },
-      { id: 3, num: 'sortie N° 33', date: '20-04-2023' },
-      { id: 4, num: 'sortie N° 34', date: '20-04-2023' },
-      { id: 5, num: 'sortie N° 35', date: '20-04-2023' },
-      { id: 6, num: 'sortie N° 36', date: '20-04-2023' },
-      { id: 7, num: 'sortie N° 37', date: '20-04-2023' },
-      { id: 8, num: 'sortie N° 338', date: '20-04-2023' },
-      { id: 9, num: 'sortie N° 39', date: '20-04-2023' },
-      { id: 10, num: 'sortie N° 34', date: '20-04-2023' },
-    ]);
-  
+
+    const [rows, setRows] = useState([]);
+    const [selectedReceipt, setSelectedReceipt] = useState('');
     const history = useHistory();
   
-   
+    useEffect(() => {
+      fetch('http://localhost:3001/api/bss')
+          .then(response => response.json())
+          .then(data => setRows(data))
+          .catch(error => console.error('Erreur lors de la récupération des données de la table bd :', error));
+  }, []);
+
+  const handleRowClick = (num) => {
+      setSelectedReceipt(num);
+  };
+
     const handleConsulter = (id) => {
      
       history.push(`/details-commande/${id}`)
@@ -40,12 +38,12 @@ function Listbs() {
   
     const handleModifier = (id) => {
       // Vous pouvez rediriger vers une nouvelle page avec les détails de la commande ici
-      history.push(`/details-sortie'/${id}`);
+      history.push(`/Editbs/${id}`);
     };
   
     const columns = [
-      { field: 'num', headerName: 'N° DE Bs', flex: 1 },
-      { field: 'date', headerName: 'Date', flex: 1 },
+      { field: 'id', headerName: 'N° DE Bs', flex: 1 },
+      { field: 'date_insertion', headerName: 'Date', flex: 1 },
       
       {
         field: 'action',
