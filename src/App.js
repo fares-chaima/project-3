@@ -41,12 +41,19 @@ import Editbcimaga from './magazinier/Editbcimaga';
 import Editbd from './magazinier/Editbd';
 import Editbs from './magazinier/Editbs';
 import Imprimerbnrecep from './magazinier/Imprimerbnrecep';
+<<<<<<< HEAD
 import Listbce from './magazinier/Listbce';
 import Listbd from './magazinier/Listbd';
 import Listbnrecep from './magazinier/Listbnrecep';
 import Listbs from './magazinier/Listbs';
 import Listebcimaga from './magazinier/Listebcimaga';
 import Sidebarmag from "./magazinier/Sidebarmag";
+=======
+import Dashasa from './asa/Dashasa'
+import AsaSideBar from './asa/AsaSideBar';
+import Dashconso from './consomateur/Dashconso';
+import Dashmaga from './magazinier/Dashmaga';
+>>>>>>> 2aa6d6fd53b1593ff6ded9bd3c949b886b0cc4b5
 function App() {
 
   const onSelectRow = (selectedRow) => {
@@ -346,6 +353,28 @@ function App() {
           </div>
         </Route>
 
+        <Route exact path="/Dashasa">
+        <MinNavBar/>
+     <div className='aligncreerbci'>
+     <AsaSideBar/>
+        <Dashasa/>
+        </div>
+      </Route>
+
+      <Route exact path="/Dashconso">
+          <MinNavBar/>
+          <div className='alignbci'>
+          <Sidebarbci/>
+           <Dashconso/>
+         </div>             
+        </Route>
+        <Route exact path="/Dashmaga">
+          <MinNavBar/>
+          <div className='alignbci'>
+          <Sidebarmag/>
+           <Dashmaga/>
+         </div>             
+        </Route>
 
        
 
